@@ -37,3 +37,35 @@
 
 </body>
 </html>
+<!-- Краткая информация -->
+<div class="about-preview">
+    <div class="about-text">
+        <h2 class="heading-text section-title">О проекте</h2>
+        <p class="regular-text">
+            Добро пожаловать на официальный сайт. Здесь вы найдете последние новости,
+            информацию о творчестве, музыку и многое другое. Проект существует с 2020 года
+            и продолжает развиваться.
+        </p>
+
+        <div class="about-stats">
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label regular-text">песен</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100k</span>
+                <span class="stat-label regular-text">слушателей</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label regular-text">альбомов</span>
+            </div>
+        </div>
+
+        <a href="/about" class="read-more">Узнать больше</a>
+    </div>
+
+    <div class="about-image">
+        <img src="/static/images/homePage/aboutImage.png" alt="О проекте">
+    </div>
+</div>
