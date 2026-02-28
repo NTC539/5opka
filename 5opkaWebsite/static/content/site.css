@@ -333,3 +333,16 @@ input[type="checkbox"].input-validation-error {
     color: rgba(0,0,0,0.55);
     font-size: 14px;
 }
+
+.about-image {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
