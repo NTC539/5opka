@@ -231,3 +231,9 @@ input[type="checkbox"].input-validation-error {
     padding-bottom: 15px;
     border-bottom: 2px solid #E0F0D0;
 }
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
