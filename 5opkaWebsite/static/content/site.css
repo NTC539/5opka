@@ -1,6 +1,13 @@
 html, body {
+    overscroll-behavior: none; /* отключает overscroll (отскок/белую область) */
+    height: 100%;
     margin: 0;
     padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -48,11 +55,24 @@ input[type="checkbox"].input-validation-error {
                                                         /*НАШИ СТИЛИ*/
 
                                                         /*СТИЛИ Layout.ptl*/
+.content {
+    flex: 1 0 auto; /* растягивается, не сжимается, auto для базового размера */
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+
+.main-content {
+    flex: 1 0 auto;
+}
+
+                                                       /*СТИЛИ Navigation bar*/
 .navbar-layout {
     height: 103px;
     background-color: #E0F0D0; /* Цвет фона */
     display: flex; /* Включаем Flexbox */
     flex-direction: row; /* Элементы в строку (это значение по умолчанию) */
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
     gap: 10px; /* Отступы между элементами (необязательно) */
@@ -64,7 +84,7 @@ input[type="checkbox"].input-validation-error {
      padding: 24px 40px;
 }
 
-.navbar.navbar-button-list {
+.navbar-button-list {
     display: flex; /* включает Flexbox */
     list-style: none; /* убирает маркеры списка */
     margin: 0;
@@ -84,4 +104,48 @@ input[type="checkbox"].input-validation-error {
 /* Эффект при наведении */
 .navbar-button-list > li > a:hover {
     opacity: 0.7;
+}
+
+                                                       /*СТИЛИ Footer*/
+footer {
+    padding: 20px 0px 0px 0px;
+    flex-shrink: 0;
+    background-color: #E0F0D0;
+}
+
+.footer-text {
+    margin: 10px 0px 0px 0px; /* убираем внешние отступы */
+    padding: 0px 0px 10px 20px; /* убираем внутренние отступы (если были) */
+    line-height: 1.2; /* при необходимости уменьшите межстрочный интервал */
+    font-size: 12pt;
+    color: black;
+}
+
+.footer-link-block {
+    padding: 0px 400px 5px 400px;
+}
+
+.footer-link {
+    display: flex; /* чтобы p располагались в строку */
+    flex-direction: row;
+    justify-content: space-between; /* текст слева, стрелка справа */
+    align-items: center;
+    text-decoration: none; /* убрать подчёркивание */
+    color: inherit; /* наследовать цвет (чёрный) */
+    width: 100%; /* занимает всю ширину родителя */
+    box-sizing: border-box;
+    padding: 10px 0px 0px 0px; /* при необходимости отрегулируйте */
+}
+
+.footer-link > p {
+    color: black;
+    font-weight: bold;
+    font-size: 25pt;
+    margin: 0px;
+    padding: 0px;
+    line-height: 1;
+}
+
+.footer-link > :nth-child(2) {
+    opacity: 0.55;
 }

@@ -11,7 +11,7 @@
 <body>
     <div class="navbar-layout">
         <div>
-            <ul class="navbar navbar-button-list">
+            <ul class="navbar-button-list">
                 <li><a href="/home">Главная</a></li>
                 <li><a href="/news">Новости</a></li>
                 <li><a href="/career">Карьера</a></li>
@@ -21,11 +21,55 @@
         </div>
     </div>
 
-    <div>
-        {{!base}}
-        <hr />
+    <div class="content">
+        
+        <div class="main-content">
+            {{!base}}
+        </div>
+        
+        
         <footer>
-            <p>&copy; {{ year }} - Иван Езерский, Дмитрий Садеков, Георгий Мироненко</p>
+            <div class="footer-link-block">
+                <a href="/home" class="footer-link">
+                    <p>Главная</p>
+                    <p>→</p>
+                </a> 
+                <hr/>
+            </div>
+
+            <div class="footer-link-block">
+                <a href="/news" class="footer-link">
+                    <p>Новости</p>
+                    <p>→</p>
+                </a> 
+                <hr/>
+            </div>
+
+            <div class="footer-link-block">
+                <a href="/career" class="footer-link">
+                    <p>Карьера</p>
+                    <p>→</p>
+                </a> 
+                <hr/>
+            </div>
+
+            <div class="footer-link-block">
+                <a href="/music" class="footer-link">
+                    <p>Музыка</p>
+                    <p>→</p>
+                </a> 
+                <hr/>
+            </div>
+
+            <div class="footer-link-block">
+                <a href="/galery" class="footer-link">
+                    <p>Галерея</p>
+                    <p>→</p>
+                </a> 
+                <hr/>
+            </div>
+
+        <p class="footer-text">&copy; {{ year }} - Иван Езерский, Дмитрий Садеков, Георгий Мироненко</p>
         </footer>
     </div>
 
