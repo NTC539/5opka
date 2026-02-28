@@ -38,6 +38,7 @@
     <Folder Include="static\fonts\" />
     <Folder Include="static\images\" />
     <Folder Include="static\images\homePage\" />
+    <Folder Include="static\images\newsPage\" />
     <Folder Include="static\scripts\" />
     <Folder Include="views\" />
   </ItemGroup>
@@ -52,6 +53,7 @@
     <Content Include="static\images\homePage\homeRowImage1.png" />
     <Content Include="static\images\homePage\homeRowImage2.png" />
     <Content Include="static\images\homePage\homeRowImage3.png" />
+    <Content Include="static\images\newsPage\placeholder132x132.png" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
