@@ -181,26 +181,72 @@ footer {
 
 
                        /*СТИЛИ ТАЙМЛАЙНА*/
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* Шапка страницы карьеры */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+    .header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Контейнер для таймлайна */
+.nav-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.nav-header {
+    margin-bottom: 30px;
+}
+
+    .nav-header h2 {
+        color: #333;
+        font-size: 1.8em;
+        margin: 0;
+    }
+
+/* Таймлайн */
 .timeline {
     position: relative;
-
+    margin: 30px 0;
+    padding: 10px 0;
 }
 
 .timeline-line {
     position: absolute;
-    top: 1.5rem;
-    left: 0;
-    right: 0;
+    top: 2rem;
+    left: 50px;
+    right: 50px;
     height: 2px;
-    background: rgba(192, 132, 252, 0.3);
+    background-color: #ccc;
 }
 
 .timeline-points {
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin: 40px auto;
-    width: 60%;
+    margin: 0 30px;
 }
 
 .timeline-point {
@@ -208,45 +254,78 @@ footer {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
+    color: #333;
 }
 
 .point-circle {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    border: 4px solid rgba(192, 132, 252, 0.3);
-    background: #1e293b;
+    border: 2px solid #999;
+    background-color: #f0f0f0;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.75rem;
-    z-index: 1;
+    margin-bottom: 0.5rem;
+    z-index: 2;
+    color: #333;
 }
 
 .timeline-point.active .point-circle {
-    background: #9333ea;
-    border-color: #c084fc;
+    background-color: #E0F0D0;
+    border-color: #2c3e50;
 }
 
 .point-label {
     text-align: center;
-    color: #000000;
-}
-
-.title {
-    text-align: center;
-}
-.age {
-    text-align: center;
-}
-.year {
-    text-align: center;
 }
 
 .timeline-point.active .point-label {
+    color: #2c3e50;
     font-weight: bold;
 }
 
+.year {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.title {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.timeline-point.active .title {
+    color: #2c3e50;
+}
+
+.age {
+    font-weight: bold;
+}
+
+/* Контент года */
+.year-content {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+    .year-content h2 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 2em;
+        border-bottom: 2px solid #E0F0D0;
+        padding-bottom: 10px;
+    }
+
+    .year-content p {
+        color: #666;
+        line-height: 1.8;
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
 
 
 

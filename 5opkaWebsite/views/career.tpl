@@ -5,8 +5,8 @@
 <div class="container">
     <!-- Шапка -->
     <header class="header">
-        <h1>Кирилл "5opka" Баранов</h1>
-        <p class="subtitle">Minecraft-стример, мем-лорд, создатель "42-братух" • Родился 5 апреля 1996</p>
+        <h1 class="heading-text">Кирилл "5opka" Баранов</h1>
+        <p class="regular-text subtitle">Minecraft-стример, мем-лорд, создатель "42-братух" • Родился 5 апреля 1996</p>
     </header>
 
     <!-- Таймлайн -->
