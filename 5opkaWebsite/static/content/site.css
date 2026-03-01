@@ -1,12 +1,25 @@
+﻿:root {
+    --main-color: #E0F0D0;
+    --sub-color: rgba(0, 0, 0, 0.05);
+    --main-font: Segoe UI;
+}
+
+html, body {
+    overscroll-behavior: none; /* отключает overscroll (отскок/белую область) */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -40,3 +53,866 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+
+
+
+
+                                                        /*НАШИ СТИЛИ*/
+
+                                                        /*СТИЛИ layout.ptl*/
+.content {
+    flex: 1 0 auto; /* растягивается, не сжимается, auto для базового размера */
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+
+.main-content {
+    flex: 1 0 auto;
+}
+
+                                                       /*СТИЛИ Navigation bar*/
+.navbar-layout {
+    height: 103px;
+    background-color: #E0F0D0; /* Цвет фона */
+    display: flex; /* Включаем Flexbox */
+    flex-direction: row; /* Элементы в строку (это значение по умолчанию) */
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Отступы между элементами (необязательно) */
+    padding: 10px; /* Внутренние отступы */
+}
+
+.navbar-layout > div {
+     background-color: rgba(0, 0, 0, 0.05);
+     padding: 13px 35px;
+}
+
+.navbar-button-list {
+    display: flex; /* включает Flexbox */
+    list-style: none; /* убирает маркеры списка */
+    margin: 0;
+    padding: 0;
+    gap: 15px; /* расстояние между пунктами (можно изменить) */
+}
+
+/* Стили для ссылок внутри списка */
+.navbar-button-list > li > a {
+    font-size: 16pt;
+    font-family: var(--main-font);
+    text-decoration: none; /* убирает подчёркивание */
+    color: black; /* наследует цвет текста (обычно чёрный) */
+    padding: 5px 10px; /* добавляет отступы для удобного нажатия */
+    display: inline-block; /* чтобы padding работал */
+}
+
+/* Эффект при наведении */
+.navbar-button-list > li > a:hover {
+    opacity: 0.7;
+}
+
+                                                       /*СТИЛИ Footer*/
+footer {
+    width: 100%;
+    padding: 20px 0px 0px 0px;
+    flex-shrink: 0;
+    background-color: #E0F0D0;
+}
+
+.footer-text {
+    margin: 10px 0px 0px 0px; /* убираем внешние отступы */
+    padding: 0px 0px 10px 20px; /* убираем внутренние отступы (если были) */
+    line-height: 1.2; /* при необходимости уменьшите межстрочный интервал */
+    font-size: 12pt;
+    font-family: var(--main-font);
+    color: var(--tex);
+}
+
+.footer-link-block {
+    padding: 0px 400px 5px 400px;
+}
+
+.footer-link {
+    display: flex; /* чтобы p располагались в строку */
+    flex-direction: row;
+    justify-content: space-between; /* текст слева, стрелка справа */
+    align-items: center;
+    text-decoration: none; /* убрать подчёркивание */
+    color: inherit; /* наследовать цвет (чёрный) */
+    width: 100%; /* занимает всю ширину родителя */
+    box-sizing: border-box;
+    padding: 10px 0px 0px 0px; /* при необходимости отрегулируйте */
+}
+
+.footer-link > p {
+    color: black;
+    font-weight: bold;
+    font-size: 20pt;
+    font-family: var(--main-font);
+    margin: 0px;
+    padding: 0px;
+    line-height: 1;
+}
+
+.footer-link > :nth-child(2) {
+    opacity: 0.55;
+}
+
+
+.heading-text {
+    color: rgba(0,0,0,1);
+    position: relative;
+    font-family: var(--main-font);
+    font-weight: Bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: left;
+}
+
+.regular-text {
+    color: rgba(0,0,0,0.65);
+    position: relative;
+    font-family: var(--main-font);
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+}
+
+
+
+
+
+                       /*СТИЛИ ТАЙМЛАЙНА*/
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* Шапка страницы карьеры */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Контейнер для таймлайна */
+.nav-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.nav-header {
+    margin-bottom: 30px;
+}
+
+.nav-header h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin: 0;
+}
+
+/* Таймлайн */
+.timeline {
+    position: relative;
+    margin: 30px 0;
+    padding: 10px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 2rem;
+    left: 0px;
+    right: 0px;
+    height: 2px;
+    background-color: #ccc;
+}
+
+.timeline-points {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px;
+}
+
+.timeline-point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.point-circle {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 2px solid #999;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    z-index: 2;
+    color: #333;
+}
+
+.timeline-point.active .point-circle {
+    background-color: var(--main-color);
+    border-color: #2c3e50;
+}
+
+.point-label {
+    text-align: center;
+}
+
+.timeline-point.active .point-label {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.year {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    text-align: center;
+}
+
+.title {
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+}
+
+.timeline-point.active .title {
+    color: #2c3e50;
+}
+
+.age {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Контент года */
+.year-content {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+    .year-content h2 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 2em;
+        border-bottom: 2px solid var(--main-color);
+        padding-bottom: 10px;
+    }
+
+    .year-content p {
+        color: #666;
+        line-height: 1.8;
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+
+/* Медиа-блоки для разнообразия макета */
+.media-block {
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+    align-items: center; /* выравнивание по центру по вертикали */
+}
+
+/* Для мобильных устройств превращаем в колонку */
+@media (max-width: 768px) {
+    .media-block {
+        flex-direction: column !important;
+    }
+
+    .media-left, .media-right {
+        flex-direction: column !important;
+    }
+
+    .media-image {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .media-text {
+        width: 100%;
+    }
+}
+
+.media-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--main-color);
+    transition: transform 0.2s ease;
+    flex-shrink: 0; /* изображение не сжимается */
+    width: 400px; /* фиксированная ширина для десктопов, можно подобрать */
+}
+
+
+.media-text {
+    flex: 1; /* текст занимает оставшееся пространство */
+}
+
+    .media-text p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+.media-left .media-image {
+    margin-right: 0; /* gap уже задаёт отступ */
+}
+
+.media-right .media-image {
+    margin-left: 0;
+}
+
+.quote {
+    margin: 30px 0 30px 20px;
+    padding: 15px 20px;
+    border-left: 4px solid var(--main-color); 
+    background-color: rgba(224, 240, 208, 0.15); 
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.7); 
+    border-radius: 0 8px 8px 0; 
+    font-size: 1.05em; 
+}
+
+    .quote::before {
+        content: "«";
+        font-size: 1.5em;
+        color: var(--main-color);
+        margin-right: 5px;
+        font-style: normal;
+    }
+
+    .quote::after {
+        content: "»";
+        font-size: 1.5em;
+        color: var(--main-color);
+        margin-left: 5px;
+        font-style: normal;
+    }
+
+
+
+
+                                                        /*СТИЛИ news.ptl*/
+.news-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 400px 25px 400px;
+}
+
+.news-block {
+    padding: 0;
+    margin: 0px 0px 10px 0px;
+    overflow-wrap: break-word; /* переносить длинные слова */
+}
+
+.news-block > p {
+    margin: 5px 0px;
+    font-size: 16pt;
+    color: black;
+    opacity: 0.55;
+}
+
+.news-block > div > p {
+    min-width: 0; /* разрешает flex-элементу сжиматься */
+    overflow-wrap: break-word; /* перенос длинных слов (уже есть, но дублирование не помешает) */
+    margin: 5px 0px;
+}
+
+.news-block > div {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.news-image {
+    align-self: center;
+    flex-shrink: 0;
+    width: 165px;
+    border-radius: 5px;
+    /*height: 150px;*/
+}
+
+.news-text {
+    font-family: var(--main-font);
+    font-size: 14pt;
+    align-self: flex-start;
+    flex: 1;
+    padding: 0px 0px 0px 8px;
+}
+
+                                                        /*СТИЛИ music.ptl*/
+.music-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 400px;
+    margin: 0px 0px 25px 0px;
+    gap: 10px;
+}
+
+.music-container > p {
+    margin: 30px 0px 10px 0px;
+}
+
+.music-scroll-row {
+    background-color: var(--main-color);
+    display: flex;
+    box-sizing: border-box;
+    border: 5px solid var(--sub-color);
+    flex-direction: row;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    justify-content: flex-start;
+    gap: 25px;
+    padding: 20px 25px;
+    scrollbar-color: black var(--main-color); /* thumb track */
+}
+
+
+.music-scroll-row::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.music-scroll-row::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.music-scroll-row::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.music-scroll-row > a > img {
+    display: block;
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+}
+
+.music-scroll-row > a :nth-child(2) {
+    margin: 5px 0px 0px 0px;
+    font-size: 16pt;
+}
+
+.music-scroll-row > a :nth-child(3) {
+    margin: 0px;
+}
+
+.music-card {
+    flex: 0 0 auto;
+    width: 160px;
+    background: white;
+    padding: 15px;
+    transition: transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.music-unit-header {
+    margin: 10px 0px;
+}
+
+.song-text {
+    font-family: Arial;
+    font-size: 14pt;
+}
+
+/* —————————————————————— */
+/* Стили для главной страницы (index.tpl) */
+/* —————————————————————— */
+
+.home-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Hero секция */
+.home-hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.home-hero-image {
+    flex: 1;
+}
+
+.home-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.home-hero-quote {
+    flex: 1;
+    background-color: #F5F5F5;
+    padding: 40px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.home-hero-quote::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 60px;
+    color: rgba(0,0,0,0.1);
+    font-family: serif;
+}
+
+.home-hero-quote p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.home-quote-author {
+    display: block;
+    text-align: right;
+    font-style: normal;
+    color: rgba(0,0,0,0.4);
+}
+
+/* Общие секции */
+.home-section {
+    margin-bottom: 60px;
+}
+
+.home-section h2 {
+    margin-bottom: 20px;
+}
+
+.home-section p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* Ряд изображений */
+.home-image-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.home-image-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.home-image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.home-image-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Список */
+.home-list {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.home-list li {
+    margin-bottom: 8px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .home-hero {
+        flex-direction: column;
+    }
+
+    .home-image-row {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page {
+        padding: 20px 15px;
+    }
+
+    .home-hero-quote {
+        padding: 30px 20px;
+    }
+}
+
+/* —————————————————————— */
+/* Стили для главной страницы (index.tpl) */
+/* —————————————————————— */
+
+.home-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Hero секция */
+.home-hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.home-hero-image {
+    flex: 1;
+}
+
+.home-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.home-hero-quote {
+    flex: 1;
+    background-color: #F5F5F5;
+    padding: 40px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.home-hero-quote::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 60px;
+    color: rgba(0,0,0,0.1);
+    font-family: serif;
+}
+
+.home-hero-quote p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.home-quote-author {
+    display: block;
+    text-align: right;
+    font-style: normal;
+    color: rgba(0,0,0,0.4);
+}
+
+/* Общие секции */
+.home-section {
+    margin-bottom: 60px;
+}
+
+.home-section h2 {
+    margin-bottom: 20px;
+}
+
+.home-section p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* Ряд изображений */
+.home-image-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.home-image-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.home-image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.home-image-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Список */
+.home-list {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.home-list li {
+    margin-bottom: 8px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .home-hero {
+        flex-direction: column;
+    }
+
+    .home-image-row {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page {
+        padding: 20px 15px;
+    }
+
+    .home-hero-quote {
+        padding: 30px 20px;
+    }
+}
+
+/* —————————————————————— */
+/* Стили для галереи (galery.tpl) */
+/* —————————————————————— */
+
+.gallery-grid {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 1 / 1; /* Квадратные ячейки */
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Картинка заполняет ячейку */
+    display: block;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 1 колонка на телефонах */
+    }
+}
+
+/* —————————————————————— */
+/* Стили для галереи (galery.tpl) */
+/* —————————————————————— */
+
+.gallery-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 100px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 350px;
+}
+
+.gallery-item {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .gallery-container {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .gallery-column {
+        width: 100%;
+        max-width: 350px;
+    }

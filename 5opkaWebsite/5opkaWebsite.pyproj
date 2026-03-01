@@ -18,6 +18,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>5opkaWebsite</Name>
     <RootNamespace>5opkaWebsite</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,18 +36,68 @@
     <Folder Include="static\" />
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
+    <Folder Include="static\images\" />
+    <Folder Include="static\images\career\" />
+    <Folder Include="static\images\career\1996\" />
+    <Folder Include="static\images\career\2011\" />
+    <Folder Include="static\images\career\2022\" />
+    <Folder Include="static\images\career\2016\" />
+    <Folder Include="static\images\career\2024\" />
+    <Folder Include="static\images\career\2025\" />
+    <Folder Include="static\images\homePage\" />
+    <Folder Include="static\images\musicPage\" />
+    <Folder Include="static\images\newsPage\" />
     <Folder Include="static\scripts\" />
     <Folder Include="views\" />
+    <Folder Include="views\career\" />
+    <Folder Include="views\music\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
-    <Content Include="static\content\bootstrap.css" />
-    <Content Include="static\content\bootstrap.min.css" />
     <Content Include="static\content\site.css" />
     <Content Include="static\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\images\career\1996\y1996-5opkaBarin.jpg" />
+    <Content Include="static\images\career\1996\y1996-5opkaGroup.png" />
+    <Content Include="static\images\career\2011\y2011-bobHavalnik.png" />
+    <Content Include="static\images\career\2011\y2011-spworlds.jpg" />
+    <Content Include="static\images\career\2011\y2011-willBeMineconInRussia.png" />
+    <Content Include="static\images\career\2016\y2016-ligaKubizma.jpg" />
+    <Content Include="static\images\career\2016\y2016-limo.jpg" />
+    <Content Include="static\images\career\2016\y2016-limoSong.jpg" />
+    <Content Include="static\images\career\2016\y2016-otso.jpg" />
+    <Content Include="static\images\career\2016\y2016-stream.jpg" />
+    <Content Include="static\images\career\2022\y2022-42.png" />
+    <Content Include="static\images\career\2022\y2022-slay.jpg" />
+    <Content Include="static\images\career\2024\y2024-1000zhiznes.jpg" />
+    <Content Include="static\images\career\2024\y2024-42bratuhi.jpg" />
+    <Content Include="static\images\career\2024\y2024-golovolomka.jpg" />
+    <Content Include="static\images\career\2024\y2024-slay.gif" />
+    <Content Include="static\images\career\2024\y2024-supernova.jpg" />
+    <Content Include="static\images\career\2025\y2025-42.jpg" />
+    <Content Include="static\images\career\2025\y2025-malikov.jpg" />
+    <Content Include="static\images\career\2025\y2025-slay.jpg" />
+    <Content Include="static\images\career\2025\y2025-superpupernova.jpg" />
+    <Content Include="static\images\homePage\homeGreetingImage.png" />
+    <Content Include="static\images\homePage\homeRowImage1.png" />
+    <Content Include="static\images\homePage\homeRowImage2.png" />
+    <Content Include="static\images\homePage\homeRowImage3.png" />
+    <Content Include="static\images\musicPage\1000zhizneyImage.png" />
+    <Content Include="static\images\musicPage\42Image.png" />
+    <Content Include="static\images\musicPage\golovolomkaImage.jpg" />
+    <Content Include="static\images\musicPage\slavaBossuImage.jpg" />
+    <Content Include="static\images\musicPage\venomBoyImage.png" />
+    <Content Include="static\images\musicPage\zhmiShareImage.png" />
+    <Content Include="static\images\newsPage\news1.jpg" />
+    <Content Include="static\images\newsPage\news2.jpg" />
+    <Content Include="static\images\newsPage\news3.jpg" />
+    <Content Include="static\images\newsPage\news4.jpg" />
+    <Content Include="static\images\newsPage\news5.jpg" />
+    <Content Include="static\images\newsPage\news6.jpg" />
+    <Content Include="static\images\newsPage\news7.jpg" />
+    <Content Include="static\images\newsPage\news8.jpg" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
@@ -62,10 +113,36 @@
     <Content Include="static\scripts\respond.js" />
     <Content Include="static\scripts\respond.min.js" />
     <Content Include="static\scripts\_references.js" />
-    <Content Include="views\about.tpl" />
-    <Content Include="views\contact.tpl" />
+    <Content Include="views\career\1996.tpl" />
+    <Content Include="views\career\2011.tpl" />
+    <Content Include="views\career\2016.tpl" />
+    <Content Include="views\career\2022.tpl" />
+    <Content Include="views\career\2024.tpl" />
+    <Content Include="views\career\2025.tpl" />
+    <Content Include="views\galery.tpl" />
+    <Content Include="views\music.tpl" />
+    <Content Include="views\music\golovolomka.tpl" />
+    <Content Include="views\music\slavaBossu.tpl" />
+    <Content Include="views\music\empty.tpl" />
+    <Content Include="views\music\1000zhizney.tpl" />
+    <Content Include="views\music\venomBoy.tpl" />
+    <Content Include="views\music\42.tpl" />
+    <Content Include="views\music\zmiShare.tpl" />
+    <Content Include="views\news.tpl" />
+    <Content Include="views\career.tpl" />
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.12</Version>
+      <Description>env (Python 3.12 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
