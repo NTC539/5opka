@@ -236,8 +236,8 @@ footer {
 .timeline-line {
     position: absolute;
     top: 2rem;
-    left: 50px;
-    right: 50px;
+    left: 0px;
+    right: 0px;
     height: 2px;
     background-color: #ccc;
 }
@@ -272,7 +272,7 @@ footer {
 }
 
 .timeline-point.active .point-circle {
-    background-color: #E0F0D0;
+    background-color: var(--main-color);
     border-color: #2c3e50;
 }
 
@@ -289,11 +289,13 @@ footer {
     font-weight: bold;
     font-size: 1.1em;
     color: #333;
+    text-align: center;
 }
 
 .title {
     font-size: 0.9em;
     color: #666;
+    text-align: center;
 }
 
 .timeline-point.active .title {
@@ -302,6 +304,7 @@ footer {
 
 .age {
     font-weight: bold;
+    text-align: center;
 }
 
 /* Контент года */
@@ -316,7 +319,7 @@ footer {
         color: #333;
         margin-bottom: 20px;
         font-size: 2em;
-        border-bottom: 2px solid #E0F0D0;
+        border-bottom: 2px solid var(--main-color);
         padding-bottom: 10px;
     }
 

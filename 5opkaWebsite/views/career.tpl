@@ -1,18 +1,34 @@
 % rebase('layout.tpl', title=title, year=year, timeline_data=timeline_data)
 
-<h1>Career</h1>
+<script>
+// Сохраняем позицию скролла при клике на точки таймлайна
+document.addEventListener('click', function(e) {
+    if (e.target.closest('.timeline-point')) {
+        sessionStorage.setItem('scrollPosition', window.scrollY);
+    }
+});
+
+// Восстанавливаем позицию после загрузки страницы
+window.addEventListener('load', function() {
+    const savedPosition = sessionStorage.getItem('scrollPosition');
+    if (savedPosition) {
+        window.scrollTo(0, parseInt(savedPosition));
+        sessionStorage.removeItem('scrollPosition');
+    }
+});
+</script>
 
 <div class="container">
     <!-- Шапка -->
     <header class="header">
         <h1 class="heading-text">Кирилл "5opka" Баранов</h1>
-        <p class="regular-text subtitle">Minecraft-стример, мем-лорд, создатель "42-братух" • Родился 5 апреля 1996</p>
+        <p class="regular-text subtitle">Minecraft-стример, мем-лорд, создатель "42-братух"</p>
     </header>
 
     <!-- Таймлайн -->
     <div class="nav-container">
-        <div class="nav-header">
-            <h2>Таймлайн жизни и карьеры</h2>
+        <div class="nav-header regular-text">
+            <h2 class=>Таймлайн жизни и карьеры</h2>
         </div>
           
         <div class="timeline">
