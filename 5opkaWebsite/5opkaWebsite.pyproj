@@ -37,7 +37,9 @@
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
     <Folder Include="static\images\" />
+    <Folder Include="static\images\career\" />
     <Folder Include="static\images\career\1996\" />
+    <Folder Include="static\images\career\2011\" />
     <Folder Include="static\images\homePage\" />
     <Folder Include="static\images\musicPage\" />
     <Folder Include="static\images\newsPage\" />
@@ -55,6 +57,9 @@
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="static\images\career\1996\y1996-5opkaBarin.jpg" />
     <Content Include="static\images\career\1996\y1996-5opkaGroup.png" />
+    <Content Include="static\images\career\2011\y2011-bobHavalnik.png" />
+    <Content Include="static\images\career\2011\y2011-spworlds.jpg" />
+    <Content Include="static\images\career\2011\y2011-willBeMineconInRussia.png" />
     <Content Include="static\images\homePage\homeGreetingImage.png" />
     <Content Include="static\images\homePage\homeRowImage1.png" />
     <Content Include="static\images\homePage\homeRowImage2.png" />

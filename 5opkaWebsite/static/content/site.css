@@ -371,7 +371,7 @@ footer {
     border: 1px solid var(--main-color);
     transition: transform 0.2s ease;
     flex-shrink: 0; /* изображение не сжимается */
-    width: 300px; /* фиксированная ширина для десктопов, можно подобрать */
+    width: 400px; /* фиксированная ширина для десктопов, можно подобрать */
 }
 
 
