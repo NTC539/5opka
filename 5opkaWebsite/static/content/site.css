@@ -1,11 +1,11 @@
-:root {
+﻿:root {
     --main-color: #E0F0D0;
     --sub-color: rgba(0, 0, 0, 0.05);
     --main-font: Segoe UI;
 }
 
 html, body {
-    overscroll-behavior: none; /* ��������� overscroll (������/����� �������) */
+    overscroll-behavior: none; /* отключает overscroll (отскок/белую область) */
     height: 100%;
     margin: 0;
     padding: 0;
@@ -58,11 +58,11 @@ input[type="checkbox"].input-validation-error {
 
 
 
-                                                        /*���� �����*/
+                                                        /*НАШИ СТИЛИ*/
 
-                                                        /*����� layout.ptl*/
+                                                        /*СТИЛИ layout.ptl*/
 .content {
-    flex: 1 0 auto; /* �������������, �� ���������, auto ��� �������� ������� */
+    flex: 1 0 auto; /* растягивается, не сжимается, auto для базового размера */
     display: flex;
     flex-direction: column;
     padding: 0px;
@@ -72,17 +72,17 @@ input[type="checkbox"].input-validation-error {
     flex: 1 0 auto;
 }
 
-                                                       /*����� Navigation bar*/
+                                                       /*СТИЛИ Navigation bar*/
 .navbar-layout {
     height: 103px;
-    background-color: #E0F0D0; /* ���� ���� */
-    display: flex; /* �������� Flexbox */
-    flex-direction: row; /* �������� � ������ (��� �������� �� ���������) */
+    background-color: #E0F0D0; /* Цвет фона */
+    display: flex; /* Включаем Flexbox */
+    flex-direction: row; /* Элементы в строку (это значение по умолчанию) */
     flex-shrink: 0;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* ������� ����� ���������� (�������������) */
-    padding: 10px; /* ���������� ������� */
+    gap: 10px; /* Отступы между элементами (необязательно) */
+    padding: 10px; /* Внутренние отступы */
 }
 
 .navbar-layout > div {
@@ -91,29 +91,29 @@ input[type="checkbox"].input-validation-error {
 }
 
 .navbar-button-list {
-    display: flex; /* �������� Flexbox */
-    list-style: none; /* ������� ������� ������ */
+    display: flex; /* включает Flexbox */
+    list-style: none; /* убирает маркеры списка */
     margin: 0;
     padding: 0;
-    gap: 15px; /* ���������� ����� �������� (����� ��������) */
+    gap: 15px; /* расстояние между пунктами (можно изменить) */
 }
 
-/* ����� ��� ������ ������ ������ */
+/* Стили для ссылок внутри списка */
 .navbar-button-list > li > a {
     font-size: 16pt;
     font-family: var(--main-font);
-    text-decoration: none; /* ������� ������������� */
-    color: black; /* ��������� ���� ������ (������ ������) */
-    padding: 5px 10px; /* ��������� ������� ��� �������� ������� */
-    display: inline-block; /* ����� padding ������� */
+    text-decoration: none; /* убирает подчёркивание */
+    color: black; /* наследует цвет текста (обычно чёрный) */
+    padding: 5px 10px; /* добавляет отступы для удобного нажатия */
+    display: inline-block; /* чтобы padding работал */
 }
 
-/* ������ ��� ��������� */
+/* Эффект при наведении */
 .navbar-button-list > li > a:hover {
     opacity: 0.7;
 }
 
-                                                       /*����� Footer*/
+                                                       /*СТИЛИ Footer*/
 footer {
     width: 100%;
     padding: 20px 0px 0px 0px;
@@ -122,9 +122,9 @@ footer {
 }
 
 .footer-text {
-    margin: 10px 0px 0px 0px; /* ������� ������� ������� */
-    padding: 0px 0px 10px 20px; /* ������� ���������� ������� (���� ����) */
-    line-height: 1.2; /* ��� ������������� ��������� ����������� �������� */
+    margin: 10px 0px 0px 0px; /* убираем внешние отступы */
+    padding: 0px 0px 10px 20px; /* убираем внутренние отступы (если были) */
+    line-height: 1.2; /* при необходимости уменьшите межстрочный интервал */
     font-size: 12pt;
     font-family: var(--main-font);
     color: var(--tex);
@@ -135,15 +135,15 @@ footer {
 }
 
 .footer-link {
-    display: flex; /* ����� p ������������� � ������ */
+    display: flex; /* чтобы p располагались в строку */
     flex-direction: row;
-    justify-content: space-between; /* ����� �����, ������� ������ */
+    justify-content: space-between; /* текст слева, стрелка справа */
     align-items: center;
-    text-decoration: none; /* ������ ������������� */
-    color: inherit; /* ����������� ���� (������) */
-    width: 100%; /* �������� ��� ������ �������� */
+    text-decoration: none; /* убрать подчёркивание */
+    color: inherit; /* наследовать цвет (чёрный) */
+    width: 100%; /* занимает всю ширину родителя */
     box-sizing: border-box;
-    padding: 10px 0px 0px 0px; /* ��� ������������� ������������� */
+    padding: 10px 0px 0px 0px; /* при необходимости отрегулируйте */
 }
 
 .footer-link > p {
@@ -184,7 +184,7 @@ footer {
 
 
 
-                       /*����� ���������*/
+                       /*СТИЛИ ТАЙМЛАЙНА*/
 .container {
     max-width: 1200px;
     margin: 20px auto;
@@ -192,7 +192,7 @@ footer {
     flex: 1;
 }
 
-/* ����� �������� ������� */
+/* Шапка страницы карьеры */
 .header {
     text-align: center;
     margin-bottom: 30px;
@@ -212,7 +212,7 @@ footer {
     color: #666;
 }
 
-/* ��������� ��� ��������� */
+/* Контейнер для таймлайна */
 .nav-container {
     background-color: white;
     border: 1px solid #ddd;
@@ -230,7 +230,7 @@ footer {
     margin: 0;
 }
 
-/* �������� */
+/* Таймлайн */
 .timeline {
     position: relative;
     margin: 30px 0;
@@ -311,7 +311,7 @@ footer {
     text-align: center;
 }
 
-/* ������� ���� */
+/* Контент года */
 .year-content {
     background-color: white;
     border: 1px solid #ddd;
@@ -334,15 +334,15 @@ footer {
         margin-bottom: 15px;
     }
 
-/* �����-����� ��� ������������ ������ */
+/* Медиа-блоки для разнообразия макета */
 .media-block {
     display: flex;
     gap: 30px;
     margin: 30px 0;
-    align-items: center; /* ������������ �� ������ �� ��������� */
+    align-items: center; /* выравнивание по центру по вертикали */
 }
 
-/* ��� ��������� ��������� ���������� � ������� */
+/* Для мобильных устройств превращаем в колонку */
 @media (max-width: 768px) {
     .media-block {
         flex-direction: column !important;
@@ -370,13 +370,13 @@ footer {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     border: 1px solid var(--main-color);
     transition: transform 0.2s ease;
-    flex-shrink: 0; /* ����������� �� ��������� */
-    width: 400px; /* ������������� ������ ��� ���������, ����� ��������� */
+    flex-shrink: 0; /* изображение не сжимается */
+    width: 400px; /* фиксированная ширина для десктопов, можно подобрать */
 }
 
 
 .media-text {
-    flex: 1; /* ����� �������� ���������� ������������ */
+    flex: 1; /* текст занимает оставшееся пространство */
 }
 
     .media-text p {
@@ -385,13 +385,39 @@ footer {
     }
 
 .media-left .media-image {
-    margin-right: 0; /* gap ��� ����� ������ */
+    margin-right: 0; /* gap уже задаёт отступ */
 }
 
 .media-right .media-image {
     margin-left: 0;
 }
 
+.quote {
+    margin: 30px 0 30px 20px;
+    padding: 15px 20px;
+    border-left: 4px solid var(--main-color); 
+    background-color: rgba(224, 240, 208, 0.15); 
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.7); 
+    border-radius: 0 8px 8px 0; 
+    font-size: 1.05em; 
+}
+
+    .quote::before {
+        content: "«";
+        font-size: 1.5em;
+        color: var(--main-color);
+        margin-right: 5px;
+        font-style: normal;
+    }
+
+    .quote::after {
+        content: "»";
+        font-size: 1.5em;
+        color: var(--main-color);
+        margin-left: 5px;
+        font-style: normal;
+    }
 
 
 
@@ -401,7 +427,8 @@ footer {
 
 
 
-                                                        /*����� news.ptl*/
+
+                                                        /*СТИЛИ news.ptl*/
 .news-container {
     display: flex;
     flex-direction: column;
@@ -413,7 +440,7 @@ footer {
 .news-block {
     padding: 0;
     margin: 0px 0px 10px 0px;
-    overflow-wrap: break-word; /* ���������� ������� ����� */
+    overflow-wrap: break-word; /* переносить длинные слова */
 }
 
 .news-block > p {
@@ -424,8 +451,8 @@ footer {
 }
 
 .news-block > div > p {
-    min-width: 0; /* ��������� flex-�������� ��������� */
-    overflow-wrap: break-word; /* ������� ������� ���� (��� ����, �� ������������ �� ��������) */
+    min-width: 0; /* разрешает flex-элементу сжиматься */
+    overflow-wrap: break-word; /* перенос длинных слов (уже есть, но дублирование не помешает) */
     margin: 5px 0px;
 }
 
@@ -446,7 +473,7 @@ footer {
     font-size: 14pt;
 }
 
-                                                        /*����� music.ptl*/
+                                                        /*СТИЛИ music.ptl*/
 .music-container {
     display: flex;
     flex-direction: column;
