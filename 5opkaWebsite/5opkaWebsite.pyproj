@@ -43,6 +43,7 @@
     <Folder Include="static\images\career\2022\" />
     <Folder Include="static\images\career\2016\" />
     <Folder Include="static\images\career\2024\" />
+    <Folder Include="static\images\career\2025\" />
     <Folder Include="static\images\homePage\" />
     <Folder Include="static\images\musicPage\" />
     <Folder Include="static\images\newsPage\" />
@@ -75,6 +76,10 @@
     <Content Include="static\images\career\2024\y2024-golovolomka.jpg" />
     <Content Include="static\images\career\2024\y2024-slay.gif" />
     <Content Include="static\images\career\2024\y2024-supernova.jpg" />
+    <Content Include="static\images\career\2025\y2025-42.jpg" />
+    <Content Include="static\images\career\2025\y2025-malikov.jpg" />
+    <Content Include="static\images\career\2025\y2025-slay.jpg" />
+    <Content Include="static\images\career\2025\y2025-superpupernova.jpg" />
     <Content Include="static\images\homePage\homeGreetingImage.png" />
     <Content Include="static\images\homePage\homeRowImage1.png" />
     <Content Include="static\images\homePage\homeRowImage2.png" />

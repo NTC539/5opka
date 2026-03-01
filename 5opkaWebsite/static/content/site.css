@@ -422,12 +422,6 @@ footer {
 
 
 
-
-
-
-
-
-
                                                         /*СТИЛИ news.ptl*/
 .news-container {
     display: flex;
@@ -549,6 +543,15 @@ footer {
     text-decoration: none;
     color: inherit;
     display: block;
+}
+
+.music-unit-header {
+    margin: 10px 0px;
+}
+
+.song-text {
+    font-family: Arial;
+    font-size: 14pt;
 }
 
 /* —————————————————————— */
@@ -913,12 +916,3 @@ footer {
         width: 100%;
         max-width: 350px;
     }
-                                                        /*����� ��� ������ �� music.ptl*/
-.music-unit-header {
-    margin: 10px 0px;
-}
-
-.song-text {
-    font-family: Arial;
-    font-size: 14pt;
-}

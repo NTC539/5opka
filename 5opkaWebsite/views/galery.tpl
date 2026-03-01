@@ -1,7 +1,7 @@
 % rebase('layout.tpl', title='Галерея', year=2026)
 
 <!-- Галерея - 3 колонки как в Figma -->
-<div class="gallery-container">
+<div class="gallery-container" style="padding: 30px;">
 
     <!-- Столбец 1 -->
     <div class="gallery-column">
