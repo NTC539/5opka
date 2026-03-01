@@ -30,10 +30,10 @@ window.addEventListener('load', function() {
         <div class="nav-header regular-text">
             <h2 class=>Таймлайн жизни и карьеры</h2>
         </div>
-          
-        <div class="timeline">  
+
+        <div class="timeline">
             <div class="timeline-line"></div>
-            
+
             <div class="timeline-points">
                 % for year, data in timeline_data.items():
                     <a href="/career/{{year}}" class="timeline-point {{'active' if year == selected_year else ''}}">
