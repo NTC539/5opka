@@ -62,7 +62,14 @@
     <Content Include="static\images\musicPage\slavaBossuImage.jpg" />
     <Content Include="static\images\musicPage\venomBoyImage.png" />
     <Content Include="static\images\musicPage\zhmiShareImage.png" />
-    <Content Include="static\images\newsPage\placeholder132x132.png" />
+    <Content Include="static\images\newsPage\news1.jpg" />
+    <Content Include="static\images\newsPage\news2.jpg" />
+    <Content Include="static\images\newsPage\news3.jpg" />
+    <Content Include="static\images\newsPage\news4.jpg" />
+    <Content Include="static\images\newsPage\news5.jpg" />
+    <Content Include="static\images\newsPage\news6.jpg" />
+    <Content Include="static\images\newsPage\news7.jpg" />
+    <Content Include="static\images\newsPage\news8.jpg" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />

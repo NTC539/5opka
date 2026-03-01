@@ -347,7 +347,7 @@ footer {
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
-    padding: 0px 400px;
+    padding: 0px 400px 25px 400px;
 }
 
 .news-block {
@@ -370,20 +370,27 @@ footer {
 }
 
 .news-block > div {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 5px;
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: 8px;
 }
 
 .news-image {
-    width: 150px;
-    height: 150px;
+    align-self: center;
+    flex-shrink: 0;
+    width: 165px;
+    border-radius: 5px;
+    /*height: 150px;*/
 }
 
 .news-text {
     font-family: var(--main-font);
     font-size: 14pt;
+    align-self: flex-start;
+    flex: 1;
+    padding: 0px 0px 0px 8px;
 }
 
                                                         /*—“»À» music.ptl*/
