@@ -41,6 +41,7 @@
     <Folder Include="static\images\newsPage\" />
     <Folder Include="static\scripts\" />
     <Folder Include="views\" />
+    <Folder Include="views\career\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
@@ -69,6 +70,12 @@
     <Content Include="static\scripts\respond.js" />
     <Content Include="static\scripts\respond.min.js" />
     <Content Include="static\scripts\_references.js" />
+    <Content Include="views\career\1996.tpl" />
+    <Content Include="views\career\2011.tpl" />
+    <Content Include="views\career\2016.tpl" />
+    <Content Include="views\career\2022.tpl" />
+    <Content Include="views\career\2024.tpl" />
+    <Content Include="views\career\2025.tpl" />
     <Content Include="views\galery.tpl" />
     <Content Include="views\music.tpl" />
     <Content Include="views\news.tpl" />
