@@ -330,6 +330,63 @@ footer {
         margin-bottom: 15px;
     }
 
+/* Медиа-блоки для разнообразия макета */
+.media-block {
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+    align-items: center; /* выравнивание по центру по вертикали */
+}
+
+/* Для мобильных устройств превращаем в колонку */
+@media (max-width: 768px) {
+    .media-block {
+        flex-direction: column !important;
+    }
+
+    .media-left, .media-right {
+        flex-direction: column !important;
+    }
+
+    .media-image {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .media-text {
+        width: 100%;
+    }
+}
+
+.media-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--main-color);
+    transition: transform 0.2s ease;
+    flex-shrink: 0; /* изображение не сжимается */
+    width: 300px; /* фиксированная ширина для десктопов, можно подобрать */
+}
+
+
+.media-text {
+    flex: 1; /* текст занимает оставшееся пространство */
+}
+
+    .media-text p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+.media-left .media-image {
+    margin-right: 0; /* gap уже задаёт отступ */
+}
+
+.media-right .media-image {
+    margin-left: 0;
+}
 
 
 

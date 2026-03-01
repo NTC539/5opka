@@ -37,7 +37,9 @@
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
     <Folder Include="static\images\" />
+    <Folder Include="static\images\career\1996\" />
     <Folder Include="static\images\homePage\" />
+    <Folder Include="static\images\career\" />
     <Folder Include="static\scripts\" />
     <Folder Include="views\" />
     <Folder Include="views\career\" />
@@ -49,6 +51,8 @@
     <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\images\career\1996\y1996-5opkaBarin.jpg" />
+    <Content Include="static\images\career\1996\y1996-5opkaGroup.png" />
     <Content Include="static\images\homePage\homeGreetingImage.png" />
     <Content Include="static\images\homePage\homeRowImage1.png" />
     <Content Include="static\images\homePage\homeRowImage2.png" />
