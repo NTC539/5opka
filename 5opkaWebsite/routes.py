@@ -3,6 +3,7 @@
 Routes and views for the bottle application.
 """
 
+from turtle import title
 from bottle import route, view, template
 from datetime import datetime
 
@@ -25,6 +26,7 @@ last_year = list(timeline_data.keys())[-1]  # '2025'
 def home():
     """Renders the home page."""
     return dict(
+        title='Главная',
         year=datetime.now().year
     )
 
@@ -35,7 +37,7 @@ def career():
     # Загружаем шаблон для последнего года
     year_template = template("career/" + last_year)
     return dict(
-                   title='Career',
+                   title='Карьера',
                    year=datetime.now().year,
                    timeline_data=timeline_data,
                    selected_year=last_year,
@@ -49,7 +51,7 @@ def career_year(year):
         # Загружаем шаблон для выбранного года
         year_template = template("career/" + year)
         return template('career',
-                       title='Career',
+                       title='Карьера',
                        year=datetime.now().year,
                        timeline_data=timeline_data,
                        selected_year=year,
@@ -58,7 +60,7 @@ def career_year(year):
         # Если год не найден, показываем последний
         year_template = template("career/" + last_year)
         return template('career',
-                       title='Career',
+                       title='Карьера',
                        year=datetime.now().year,
                        timeline_data=timeline_data,
                        selected_year=last_year,
@@ -69,7 +71,7 @@ def career_year(year):
 def news():
     """Renders the news page."""
     return dict(
-        title='News',
+        title='Новости',
         message='Your application description page.',
         year=datetime.now().year
     )
@@ -79,7 +81,7 @@ def news():
 def galery():
     """Renders the galery page."""
     return dict(
-        title='Galery',
+        title='Галерея',
         message='Your application description page.',
         year=datetime.now().year
     )
@@ -93,7 +95,7 @@ def music():
     """Страница музыки с треком по умолчанию"""
     track_content = template('music/' + default_track)
     return dict(
-        title='Music',
+        title='Музыка',
         year=datetime.now().year,
         music_content=track_content,
         selected_track=default_track,
@@ -110,7 +112,7 @@ def music_track(track_name):
         track_content = template('music/' + default_track)
         track_name = default_track
     return dict(
-        title='Music',
+        title='Музыка',
         year=datetime.now().year,
         music_content=track_content,
         selected_track=track_name,

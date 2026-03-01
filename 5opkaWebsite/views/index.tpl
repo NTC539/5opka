@@ -1,4 +1,4 @@
-% rebase('layout.tpl', title='Главная', year=2026)
+% rebase('layout.tpl', title='Главная', year=year)
 
 <!-- Главная страница -->
 <div class="home-page">

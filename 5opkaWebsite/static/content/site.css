@@ -172,7 +172,7 @@ footer {
 }
 
 .regular-text {
-    color: rgba(0,0,0,0.55);
+    color: rgba(0,0,0,0.65);
     position: relative;
     font-family: var(--main-font);
     font-size: 18px;
@@ -913,4 +913,12 @@ footer {
         width: 100%;
         max-width: 350px;
     }
+                                                        /*����� ��� ������ �� music.ptl*/
+.music-unit-header {
+    margin: 10px 0px;
+}
+
+.song-text {
+    font-family: Arial;
+    font-size: 14pt;
 }
