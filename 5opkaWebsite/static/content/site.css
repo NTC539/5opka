@@ -60,7 +60,7 @@ input[type="checkbox"].input-validation-error {
 
                                                         /*НАШИ СТИЛИ*/
 
-                                                        /*СТИЛИ Layout.ptl*/
+                                                        /*СТИЛИ layout.ptl*/
 .content {
     flex: 1 0 auto; /* растягивается, не сжимается, auto для базового размера */
     display: flex;
@@ -87,7 +87,7 @@ input[type="checkbox"].input-validation-error {
 
 .navbar-layout > div {
      background-color: rgba(0, 0, 0, 0.05);
-     padding: 24px 40px;
+     padding: 13px 35px;
 }
 
 .navbar-button-list {
@@ -101,6 +101,7 @@ input[type="checkbox"].input-validation-error {
 /* Стили для ссылок внутри списка */
 .navbar-button-list > li > a {
     font-size: 16pt;
+    font-family: var(--main-font);
     text-decoration: none; /* убирает подчёркивание */
     color: black; /* наследует цвет текста (обычно чёрный) */
     padding: 5px 10px; /* добавляет отступы для удобного нажатия */
@@ -114,6 +115,7 @@ input[type="checkbox"].input-validation-error {
 
                                                        /*СТИЛИ Footer*/
 footer {
+    width: 100%;
     padding: 20px 0px 0px 0px;
     flex-shrink: 0;
     background-color: #E0F0D0;
@@ -124,6 +126,7 @@ footer {
     padding: 0px 0px 10px 20px; /* убираем внутренние отступы (если были) */
     line-height: 1.2; /* при необходимости уменьшите межстрочный интервал */
     font-size: 12pt;
+    font-family: var(--main-font);
     color: var(--tex);
 }
 
@@ -146,7 +149,8 @@ footer {
 .footer-link > p {
     color: black;
     font-weight: bold;
-    font-size: 25pt;
+    font-size: 20pt;
+    font-family: var(--main-font);
     margin: 0px;
     padding: 0px;
     line-height: 1;
@@ -197,11 +201,11 @@ footer {
     border: 1px solid #ddd;
 }
 
-    .header h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-        color: #333;
-    }
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
 
 .subtitle {
     font-size: 1.2em;
@@ -220,11 +224,11 @@ footer {
     margin-bottom: 30px;
 }
 
-    .nav-header h2 {
-        color: #333;
-        font-size: 1.8em;
-        margin: 0;
-    }
+.nav-header h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin: 0;
+}
 
 /* Таймлайн */
 .timeline {
@@ -396,3 +400,119 @@ footer {
 
 
 
+
+                                                        /*СТИЛИ news.ptl*/
+.news-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 400px;
+}
+
+.news-block {
+    padding: 0;
+    margin: 0px 0px 10px 0px;
+    overflow-wrap: break-word; /* переносить длинные слова */
+}
+
+.news-block > p {
+    margin: 5px 0px;
+    font-size: 16pt;
+    color: black;
+    opacity: 0.55;
+}
+
+.news-block > div > p {
+    min-width: 0; /* разрешает flex-элементу сжиматься */
+    overflow-wrap: break-word; /* перенос длинных слов (уже есть, но дублирование не помешает) */
+    margin: 5px 0px;
+}
+
+.news-block > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.news-image {
+    width: 150px;
+    height: 150px;
+}
+
+.news-text {
+    font-family: var(--main-font);
+    font-size: 14pt;
+}
+
+                                                        /*СТИЛИ music.ptl*/
+.music-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 400px;
+    margin: 0px 0px 25px 0px;
+    gap: 10px;
+}
+
+.music-container > p {
+    margin: 30px 0px 10px 0px;
+}
+
+.music-scroll-row {
+    background-color: var(--main-color);
+    display: flex;
+    box-sizing: border-box;
+    border: 5px solid var(--sub-color);
+    flex-direction: row;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    justify-content: flex-start;
+    gap: 25px;
+    padding: 20px 25px;
+    scrollbar-color: black var(--main-color); /* thumb track */
+}
+
+
+.music-scroll-row::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.music-scroll-row::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.music-scroll-row::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.music-scroll-row > a > img {
+    display: block;
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+}
+
+.music-scroll-row > a :nth-child(2) {
+    margin: 5px 0px 0px 0px;
+    font-size: 16pt;
+}
+
+.music-scroll-row > a :nth-child(3) {
+    margin: 0px;
+}
+
+.music-card {
+    flex: 0 0 auto;
+    width: 160px;
+    background: white;
+    padding: 15px;
+    transition: transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}

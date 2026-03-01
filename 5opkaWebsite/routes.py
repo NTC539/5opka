@@ -74,16 +74,6 @@ def news():
         year=datetime.now().year
     )
 
-@route('/music')
-@view('music')
-def music():
-    """Renders the music page."""
-    return dict(
-        title='Music',
-        message='Your application description page.',
-        year=datetime.now().year
-    )
-
 @route('/galery')
 @view('galery')
 def galery():
@@ -92,4 +82,37 @@ def galery():
         title='Galery',
         message='Your application description page.',
         year=datetime.now().year
+    )
+
+track_list = ['empty', 'zmiShare', '42', 'venomBoy', '1000zhizney', 'slavaBossu', 'golovolomka']
+default_track = track_list[0]
+
+@route('/music')
+@view('music')
+def music():
+    """Страница музыки с треком по умолчанию"""
+    track_content = template('music/' + default_track)
+    return dict(
+        title='Music',
+        year=datetime.now().year,
+        music_content=track_content,
+        selected_track=default_track,
+        track_list=track_list
+    )
+
+@route('/music/<track_name>')
+@view('music')
+def music_track(track_name):
+    """Страница музыки с выбранным треком"""
+    if track_name in track_list:
+        track_content = template('music/' + track_name)
+    else:
+        track_content = template('music/' + default_track)
+        track_name = default_track
+    return dict(
+        title='Music',
+        year=datetime.now().year,
+        music_content=track_content,
+        selected_track=track_name,
+        track_list=track_list
     )

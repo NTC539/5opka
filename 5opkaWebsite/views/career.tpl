@@ -31,7 +31,7 @@ window.addEventListener('load', function() {
             <h2 class=>Таймлайн жизни и карьеры</h2>
         </div>
           
-        <div class="timeline">
+        <div class="timeline">  
             <div class="timeline-line"></div>
             
             <div class="timeline-points">
