@@ -97,17 +97,18 @@
                        name="ADRESS"
                        placeholder="Your email">
             </p>
-            </p>
             <p>
-                <input type="submit"
-                       class="btn btn-default"
-                       value="Send">
-            </p>   <p>
                 <input type="text"
                        size="50"
                        class="form-control"
                        name="USERNAME"
                        placeholder="Your name">
+            </p>
+            <p>
+                <input type="submit"
+                       class="btn btn-default"
+                       value="Send">
+            </p>
         </form>
     </div>
 
