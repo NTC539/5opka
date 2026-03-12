@@ -6,10 +6,23 @@ from datetime import datetime
 
 def is_valid_email(email):
     pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    if not re.fullmatch(pattern, email):
+        return False
 
-    if re.fullmatch(pattern, email):
-        return True
+    # Проверка на реальные домены
+    valid_domains = [
+        'gmail.com', 'mail.ru', 'yandex.ru', 'ya.ru',
+        'outlook.com',  'rambler.ru'
+    ]
+
+    domain = email.split('@')[1].lower()
+
+    for valid_domain in valid_domains:
+        if domain == valid_domain:
+            return True
+
     return False
+
 
 @post('/home', method='post')
 def my_form():
