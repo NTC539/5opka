@@ -1,4 +1,4 @@
-% rebase('layout.tpl', title='Главная', year=year)
+% rebase('layout.tpl', title='Главная', year=2026)
 
 <!-- Главная страница -->
 <div class="home-page">
@@ -77,6 +77,33 @@
             <li>spworlds</li>
             <li>СПб (Страна подписчиков бедрок)</li>
         </ul>
+    </div>
+
+        <!-- Форма обратной связи для лабораторной работы -->
+    <div class="home-section">
+        <h3>Ask a Question</h3>
+        <form action="/home" method="post">
+            <p>
+                <textarea rows="2" cols="50"
+                          style="resize: none;"
+                          class="form-control"
+                          name="QUEST"
+                          placeholder="Your question"></textarea>
+            </p>
+            <p>
+                <input type="text"
+                       size="50"
+                       class="form-control"
+                       name="ADRESS"
+                       placeholder="Your email">
+            </p>
+            </p>
+            <p>
+                <input type="submit"
+                       class="btn btn-default"
+                       value="Send">
+            </p>
+        </form>
     </div>
 
 </div>
