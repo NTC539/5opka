@@ -1,7 +1,42 @@
-from bottle import post, request
+import re
+
+from bottle import post, request, template
+from datetime import datetime
+
+
+def is_valid_email(email):
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+
+    if re.fullmatch(pattern, email):
+        return True
+    return False
 
 @post('/home', method='post')
 def my_form():
     mail = request.forms.get('ADRESS')
-    return "Thanks! The answer will be sent to the mail %s" % mail
+    quest = request.forms.get('QUEST')
+    name = request.forms.get('USERNAME')
 
+    if not mail:
+        return template('error',
+            title="Ошибка!",
+            message="Пожалуйста, заполните форму email."
+        )
+    elif not quest:
+        return template('error',
+            title="Ошибка!",
+            message="Пожалуйста, заполните заполните форму вопроса."
+        )
+    elif not name:
+        return template('error',
+            title="Ошибка!",
+            message="Пожалуйста, заполните заполните форму имени."
+        )
+
+    if not is_valid_email(mail):
+        return template('error',
+            title="Ошибка!",
+            message="email в неправильном формате"
+        )
+
+    return "Thanks! %s The answer will be sent to the mail %s Access Date: %s" % (name, mail, datetime.now().strftime("%Y-%m-%d"))

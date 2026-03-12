@@ -102,7 +102,12 @@
                 <input type="submit"
                        class="btn btn-default"
                        value="Send">
-            </p>
+            </p>   <p>
+                <input type="text"
+                       size="50"
+                       class="form-control"
+                       name="USERNAME"
+                       placeholder="Your name">
         </form>
     </div>
 
