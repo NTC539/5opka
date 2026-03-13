@@ -26,9 +26,9 @@ def is_valid_email(email):
 
 @post('/home', method='post')
 def my_form():
-    mail = request.forms.get('ADRESS')
-    quest = request.forms.get('QUEST')
-    name = request.forms.get('USERNAME')
+    mail = request.forms.get('ADRESS').strip()
+    quest = request.forms.get('QUEST').strip()
+    name = request.forms.get('USERNAME').strip()
 
     if not mail:
         return template('error',
