@@ -9,16 +9,21 @@ def is_valid_email(email):
     if not re.fullmatch(pattern, email):
         return False
 
-    # Проверка на реальные домены
+        # Проверка на реальные домены
     valid_domains = [
         'gmail.com', 'mail.ru', 'yandex.ru', 'ya.ru',
         'outlook.com',  'rambler.ru'
     ]
 
-    domain = email.split('@')[1].lower()
+    local_part, domain = email.split('@')
+
+    if len(local_part) > 15:
+        return False
+
+    domain_lower = domain.lower()
 
     for valid_domain in valid_domains:
-        if domain == valid_domain:
+        if domain_lower == valid_domain:
             return True
 
     return False
