@@ -24,7 +24,7 @@ def is_valid_email(email):
     local_part, domain = email.split('@')
 
     # Проверка длины
-    if len(local_part) > 15:
+    if len(local_part) > 40:
         return False
 
     # Переводим в нижний регистр

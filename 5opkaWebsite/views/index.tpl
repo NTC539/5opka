@@ -81,35 +81,35 @@
 
         <!-- Форма обратной связи для лабораторной работы -->
     <div class="home-section">
-        <h3>Ask a Question</h3>
-        <form action="/home" method="post">
-            <p>
-                <textarea rows="2" cols="50"
-                          style="resize: none;"
-                          class="form-control"
-                          name="QUEST"
-                          placeholder="Your question"></textarea>
-            </p>
-            <p>
-                <input type="text"
-                       size="50"
-                       class="form-control"
-                       name="ADRESS"
-                       placeholder="Your email">
-            </p>
-            <p>
-                <input type="text"
-                       size="50"
-                       class="form-control"
-                       name="USERNAME"
-                       placeholder="Your name">
-            </p>
-            <p>
-                <input type="submit"
-                       class="btn btn-default"
-                       value="Send">
-            </p>
-        </form>
-    </div>
+    <h3>Ask a Question</h3>
+    <form action="/home" method="post">
+        <p>
+            <textarea rows="2"
+                      cols="50"
+                      style="resize: none;"
+                      class="form-control"
+                      name="QUEST"
+                      placeholder="Your question"></textarea>
+        </p>
+        <p>
+            <input type="text"
+                   size="50"
+                   class="form-control"
+                   name="ADRESS"
+                   placeholder="Your email">
+        </p>
+        <p>
+            <input type="text"
+                   size="50"
+                   class="form-control"
+                   name="USERNAME"
+                   placeholder="Your name">
+        </p>
+        <p>
+            <input type="submit"
+                   value="Send">
+        </p>
+    </form>
+</div>
 
 </div>
