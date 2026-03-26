@@ -70,7 +70,7 @@ def my_form():
             message="email в неправильном формате"
         )
 
-    user_questions[mail] = quest
+    user_questions[mail] = [name, quest]
     pdb.set_trace()
 
     return "Thanks! %s The answer will be sent to the mail %s Access Date: %s" % (name, mail, datetime.now().strftime("%Y-%m-%d"))
