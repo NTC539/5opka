@@ -1,8 +1,10 @@
 import re
-
+import pdb
 from bottle import post, request, template
 from datetime import datetime
 
+
+user_questions = {}
 
 def is_valid_email(email):
     """
@@ -67,5 +69,8 @@ def my_form():
             title="Ошибка!",
             message="email в неправильном формате"
         )
+
+    user_questions[mail] = quest
+    pdb.set_trace()
 
     return "Thanks! %s The answer will be sent to the mail %s Access Date: %s" % (name, mail, datetime.now().strftime("%Y-%m-%d"))

@@ -83,6 +83,13 @@
     <div class="home-section">
     <h3>Ask a Question</h3>
     <form action="/home" method="post">
+            <p>
+            <input type="text"
+                   size="50"
+                   class="form-control"
+                   name="USERNAME"
+                   placeholder="Your name">
+        </p>
         <p>
             <textarea rows="2"
                       cols="50"
@@ -97,13 +104,6 @@
                    class="form-control"
                    name="ADRESS"
                    placeholder="Your email">
-        </p>
-        <p>
-            <input type="text"
-                   size="50"
-                   class="form-control"
-                   name="USERNAME"
-                   placeholder="Your name">
         </p>
         <p>
             <input type="submit"
