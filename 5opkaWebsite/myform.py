@@ -6,7 +6,24 @@ from datetime import datetime
 
 user_questions = {}
 
-def is_valid_email(email):
+def is_valid_question(question: str) -> tuple[bool, str]:
+    """
+    Проверка корректности вопроса:
+    - длина более 3 символов
+    - не состоит только из цифр
+    - не пустой после очистки
+    """
+    question = question.strip()
+
+    if len(question) <= 3:
+        return False, "Вопрос должен содержать более 3 символов"
+
+    if question.isdigit():
+        return False, "Вопрос не может состоять только из цифр"
+
+    return True, ""
+
+def is_valid_email(email: str) -> bool:
     """
     Функция для, проверка корректности email почты
     """
