@@ -33,18 +33,26 @@ def save_questions(data: dict[str, str]):
 
 def is_valid_question(question: str) -> tuple[bool, str]:
     """
-    Проверка корректности вопроса:
     - длина более 3 символов
     - не состоит только из цифр
+    - не состоит только из спецсимволов (&&&, ???, !!! и т.п.)
+    - должен содержать хотя бы одну букву (русскую или английскую)
     - не пустой после очистки
     """
     question = question.strip()
 
+    # Проверка длины
     if len(question) <= 3:
         return False, "Вопрос должен содержать более 3 символов"
 
+    # Проверка: не состоит только из цифр
     if question.isdigit():
         return False, "Вопрос не может состоять только из цифр"
+
+    has_letter = bool(re.search(r'[a-zA-Zа-яА-ЯёЁ]', question))
+
+    if not has_letter:
+        return False, "Вопрос должен содержать хотя бы одну букву"
 
     return True, ""
 
