@@ -1,6 +1,9 @@
 """
 This script runs the application using a development server.
 """
+import cProfile
+import pstats
+
 import bottle
 import os
 import sys
@@ -19,22 +22,21 @@ def wsgi_app():
     when the site is published to Microsoft Azure."""
     return bottle.default_app()
 
+
 if __name__ == '__main__':
-    PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static').replace('\\', '/')
+    # Настройка параметров сервера
     HOST = os.environ.get('SERVER_HOST', 'localhost')
+    PORT = 5555
+
+    # Создаем объект профилировщика
+    profiler = cProfile.Profile()
+    profiler.enable()
+
     try:
-        PORT = int(os.environ.get('SERVER_PORT', '5555'))
-    except ValueError:
-        PORT = 5555
-
-    @bottle.route('/static/<filepath:path>')
-    def server_static(filepath):
-        """Handler for static files, used with the development server.
-        When running under a production server such as IIS or Apache,
-        the server should be configured to serve the static files."""
-        return bottle.static_file(filepath, root=STATIC_ROOT)
-
-    # Starts a local test server.
-    bottle.run(server='wsgiref', host=HOST, port=PORT)
-
+        # Запускаем сервер
+        bottle.run(server='wsgiref', host=HOST, port=PORT)
+    finally:
+        profiler.disable()
+        # Вывод статистики после остановки сервера
+        stats = pstats.Stats(profiler).sort_stats('cumtime')
+        stats.print_stats(20)  # Вывести топ-20 самых «тяжелых» функций

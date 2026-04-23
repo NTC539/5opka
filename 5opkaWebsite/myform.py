@@ -20,6 +20,8 @@ def load_questions() -> dict:
                 return json.load(f)
         except (json.JSONDecodeError, OSError):
             return {}
+        except Exception as error:
+            return {}
     return {}
 
 
@@ -55,23 +57,48 @@ def is_valid_question(question: str) -> tuple[bool, str]:
 
 def is_valid_email(email: str) -> bool:
     """Проверка корректности email почты"""
-    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    if not email or not isinstance(email, str):
+        return False
+
+    # Проверка на пробелы в начале, в конце и внутри
+    if email != email.strip() or ' ' in email:
+        return False
+
+    email = email.strip()
+
+    # Проверка: не начинается с точки
+    if email.startswith('.'):
+        return False
+
+    # Регулярное выражение (добавлен % в локальную часть)
+    pattern = r'^[a-zA-Z0-9_.+%-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$'
 
     if not re.fullmatch(pattern, email):
         return False
 
-    valid_domains = [
-        'gmail.com', 'mail.ru', 'yandex.ru', 'ya.ru',
-        'outlook.com', 'rambler.ru'
-    ]
-
+    # Дополнительные проверки локальной части
     try:
         local_part, domain = email.split('@')
     except ValueError:
         return False
 
+    # Точка не в начале и не в конце локальной части
+    if local_part.startswith('.') or local_part.endswith('.'):
+        return False
+
+    # Нет двух точек подряд
+    if '..' in local_part or '..' in domain:
+        return False
+
+    # Длина локальной части не более 40 символов
     if len(local_part) > 40:
         return False
+
+    # Проверка домена по списку
+    valid_domains = [
+        'gmail.com', 'mail.ru', 'yandex.ru', 'ya.ru',
+        'outlook.com', 'rambler.ru'
+    ]
 
     return domain.lower() in valid_domains
 
@@ -143,17 +170,20 @@ def my_form():
     # Загружаем существующие данные
     user_questions = load_questions()
 
-    # Добавляем новые данные (сохраняем имя и вопросы)
     if mail in user_questions:
         # Пользователь уже существует
         existing_data = user_questions[mail]
 
+        # Обновляем имя (если оно изменилось)
+        existing_data['name'] = name
+
         # Проверяем на дубликат вопроса
         if quest not in existing_data['questions']:
             existing_data['questions'].append(quest)
-            user_questions[mail] = existing_data
+
+        user_questions[mail] = existing_data
     else:
-        # Новый пользователь — создаем запись с именем и первым вопросом
+        # Новый пользователь — создаем запись
         user_questions[mail] = {
             "name": name,
             "questions": [quest]
