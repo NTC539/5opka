@@ -1,13 +1,12 @@
-name: Test
-
+name: Tests
 
 on:
   push:
-    branches:
-      - question-form
+    branches: [ question-form ]
+
 jobs:
   test:
-    name: Test function is_valid_email
+    name: Run Python Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -19,6 +18,13 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run test with
-        run:
-            python 5opkaWebsite/simple_test.py
+      - name: Install dependencies
+        working-directory: ./5opkaWebsite
+        run: |
+          python -m pip install --upgrade pip
+          pip install python-dotenv bottle
+
+      - name: Run tests
+        working-directory: ./5opkaWebsite
+        run: |
+          python -m unittest simple_test.py -v
