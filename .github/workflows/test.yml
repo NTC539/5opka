@@ -5,7 +5,6 @@ on:
   push:
     branches:
       - question-form
-
 jobs:
   test:
     name: Test function is_valid_email
@@ -14,21 +13,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Test
-
-
-obs:
-  build:
-    name: Build Docker Images
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
 
       - name: Set up Python
         uses: actions/setup-python@v5
