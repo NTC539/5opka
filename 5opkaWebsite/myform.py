@@ -66,7 +66,6 @@ def is_valid_email(email: str) -> bool:
 
     email = email.strip()
 
-    # Проверка: не начинается с точки
     if email.startswith('.'):
         return False
 

@@ -3,7 +3,6 @@ from myform import is_valid_email
 
 
 class TestEmailValidation(unittest.TestCase):
-
     def test_invalid_emails(self):
         """Тест с assertFalse для некорректных email (не менее 12 случаев)"""
         list_mail_uncor = [
