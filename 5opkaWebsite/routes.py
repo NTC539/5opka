@@ -118,3 +118,33 @@ def music_track(track_name):
         selected_track=track_name,
         track_list=track_list
     )
+
+@route('/articles')
+@view('articles')
+def news():
+    """Renders the articles page."""
+    return dict(
+        title='Статьи',
+        message='Your application description page.',
+        year=datetime.now().year
+    )
+
+@route('/shop')
+@view('shop')
+def news():
+    """Renders the shop page."""
+    return dict(
+        title='Магазин',
+        message='Your application description page.',
+        year=datetime.now().year
+    )
+
+@route('/feedback')
+@view('feedback')
+def news():
+    """Renders the feedback page."""
+    return dict(
+        title='Отзывы',
+        message='Your application description page.',
+        year=datetime.now().year
+    )
