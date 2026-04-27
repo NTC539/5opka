@@ -17,6 +17,9 @@
                 <li><a href="/career">Карьера</a></li>
                 <li><a href="/music">Музыка</a></li>
                 <li><a href="/galery">Галерея</a></li>
+                <li><a href="/articles">Статьи</a></li>
+                <li><a href="/shop">Магазин</a></li>
+                <li><a href="/feedback">Отзывы</a></li>
             </ul>
         </div>
     </div>
