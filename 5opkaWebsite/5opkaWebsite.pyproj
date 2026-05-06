@@ -18,7 +18,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>5opkaWebsite</Name>
     <RootNamespace>5opkaWebsite</RootNamespace>
-    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,6 +46,7 @@
     <Folder Include="static\images\career\2025\" />
     <Folder Include="static\images\homePage\" />
     <Folder Include="static\images\musicPage\" />
+    <Folder Include="static\images\shopPage\" />
     <Folder Include="static\images\newsPage\" />
     <Folder Include="static\scripts\" />
     <Folder Include="views\" />
