@@ -37,6 +37,7 @@
     box-sizing: border-box;
     font-family: var(--main-font, 'Segoe UI');
     font-weight: normal;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
     .btn-new:hover {
@@ -81,6 +82,10 @@
     font-family: var(--main-font, 'Segoe UI');
 }
 
+.active {
+    background: rgba(0, 0, 0, 0.06);
+}
+
     .article-item:hover {
         background: rgba(0, 0, 0, 0.03);
     }
@@ -101,10 +106,11 @@
     text-align: center;
     padding: 20px;
     color: rgba(0, 0, 0, 0.4);
+    font-family: var(--main-font, 'Segoe UI');
 }
 
 /* Основное полотно */
-.sas {
+.article-view {
     flex: 1;
     padding: 25px 30px;
     background: #fff;
