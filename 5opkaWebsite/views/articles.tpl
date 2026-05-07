@@ -53,15 +53,15 @@
                 <form method="post" action="/articles/save" enctype="multipart/form-data">
                     <div class="form-group">
                         <label class="regular-text">Автор</label>
-                        <input type="text" name="author" value="{{form_data.get('author', '')}}" required>
+                        <input type="text" name="author" value="{{form_data.get('author', '')}}">
                     </div>
                     <div class="form-group">
                         <label class="regular-text">Телефон (в формате +7XXXXXXXXXX или 8XXXXXXXXXX)</label>
-                        <input type="tel" name="phone" value="{{form_data.get('phone', '')}}" required>
+                        <input type="tel" name="phone" value="{{form_data.get('phone', '')}}">
                     </div>
                     <div class="form-group">
                         <label class="regular-text">Заголовок</label>
-                        <input type="text" name="title" value="{{form_data.get('title', '')}}" required>
+                        <input type="text" name="title" value="{{form_data.get('title', '')}}">
                     </div>
                     <div class="form-group">
                         <label class="regular-text">Текст статьи (можно использовать HTML)</label>

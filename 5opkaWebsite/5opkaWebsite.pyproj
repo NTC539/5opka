@@ -19,6 +19,9 @@
     <Name>5opkaWebsite</Name>
     <RootNamespace>5opkaWebsite</RootNamespace>
     <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>utest*.py</UnitTestPattern>
+    <UnitTestRootDirectory>test</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,6 +38,9 @@
     </Compile>
     <Compile Include="routes.py" />
     <Compile Include="test\utest_article_fields.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="utils\article_storage.py">
