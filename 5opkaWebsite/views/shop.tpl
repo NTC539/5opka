@@ -1,6 +1,5 @@
 % rebase('layout.tpl', title=title, year=year)
 <link rel="stylesheet" type="text/css" href="/static/content/shop.css"/>
-
 <div>
 	<div class="products-container">
         <div class="product-card" data-product="Футболка">
@@ -16,14 +15,14 @@
             <p class="product-price">3 500 ₽</p>
         </div>
         <div class="product-card" data-product="Фото с автографом">
-            <img src="/static/images/shopPage/Сalendar.png" class="product-image" alt="Календарь"/>
+            <img src="/static/images/shopPage/Calendar.png" class="product-image" alt="Календарь"/>
             <h3 class="product-name">Календарь 2026 (маленький)</h3>
             <p class="product-desc">200х100х85мм</p>
             <p class="product-price">800 ₽</p>
         </div>
     </div>
 	<div class="form-container">
-		<form class="order-form" name="shop-order" method="post">
+		<form action="/order" class="order-form" name="shop-order" method="post">
 			<label for="order-first-name">Имя</label>
 			<input id="order-first-name" type="text" name="first_name" placeholder="Введите ваше имя"/>
     
@@ -45,7 +44,6 @@
                 <option value="">Футболка "Мачо и ботан"</option>
                 <option value="">Календарь 2026 (маленький)</option>
             </select>
-
 			<input id="order-submit" type="submit" name="submit" value="Заказать"/>
 		</form>
 	</div>
