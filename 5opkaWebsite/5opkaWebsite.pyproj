@@ -34,11 +34,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes.py" />
+    <Compile Include="test\utest_article_fields.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="utils\article_storage.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="test\" />
     <Folder Include="utils\" />
     <Folder Include="static\" />
     <Folder Include="static\content\" />

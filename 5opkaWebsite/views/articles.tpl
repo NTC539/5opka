@@ -13,7 +13,7 @@
         </div>
         <div class="articles-list">
             % for article in articles_list:
-            <a href="/articles?id={{article['id']}}" class="article-item {{'active' if (mid := ((main or {}).get('article') or {}).get('id')) is not None and (article or {}).get('id') == mid else ''}}">
+            <a href="/articles?id={{article['id']}}" class="article-item {{'active' if (mid := ((main or {}).get('article') or {}).get('id')) is not None and (article or {}).get('id') == mid else '' }}">
                 <h4>{{article['title']}}</h4>
                 <p>{{article['author']}} • {{article['created_at'][:10]}}</p>
             </a>
@@ -30,7 +30,8 @@
                 <h1 class="heading-text">{{main['article']['title']}}</h1>
                 <div class="article-meta regular-text">
                     Автор: {{main['article']['author']}} • 
-                    Дата: {{main['article']['created_at'][:10]}}
+                    Дата: {{main['article']['created_at'][:10]}} •
+                    Телефон: {{main['article']['phone']}}
                 </div>
                 <div class="article-content regular-text">
                     {{! main['article']['content']}}
@@ -44,7 +45,7 @@
                     <strong>Исправьте ошибки:</strong>
                     <ul>
                         % for err in form_errors.values():
-                        <li>{{err}}</li>
+                        <li class="regular-text">{{err}}</li>
                         % end
                     </ul>
                 </div>
@@ -53,6 +54,10 @@
                     <div class="form-group">
                         <label class="regular-text">Автор</label>
                         <input type="text" name="author" value="{{form_data.get('author', '')}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="regular-text">Телефон (в формате +7XXXXXXXXXX или 8XXXXXXXXXX)</label>
+                        <input type="tel" name="phone" value="{{form_data.get('phone', '')}}" required>
                     </div>
                     <div class="form-group">
                         <label class="regular-text">Заголовок</label>
@@ -66,6 +71,7 @@
                         <label class="regular-text">Изображение (будет добавлено в конец статьи)</label>
                         <input type="file" name="image" accept="image/*">
                     </div>
+
                     <button type="submit" class="btn-submit">Опубликовать</button>
                 </form>
             </div>

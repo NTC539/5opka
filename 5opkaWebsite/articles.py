@@ -53,21 +53,19 @@ def articles_page():
 
 @route('/articles/save', method='POST')
 def save_article():
-    """Обработка сохранения новой статьи (с возможной загрузкой изображения)."""
     author = request.forms.get('author', '').strip()
     title = request.forms.get('title', '').strip()
     content = request.forms.get('content', '')
+    phone = request.forms.get('phone', '').strip()          # новое поле
+    
     uploaded_image = request.files.get('image')
+    if uploaded_image:
+        url = save_uploaded_image(uploaded_image)
+        if url:
+            content += f'\n\n<div><img src="{url}" alt="image" style="max-width:100%"></div>\n'
     
-    # Если загружено изображение – сохраняем и добавляем тег в конец текста
-    image_url = save_uploaded_image(uploaded_image)
-    if image_url:
-        content += f'\n\n<div><img src="{image_url}" alt="image" style="max-width:100%">\n'
-    
-    # Валидация
-    errors = validate_article_fields(author, title, content)
+    errors = validate_article_fields(author, title, content, phone)   # добавили phone
     if errors:
-        # Возвращаем в редактор с ошибками
         all_articles = load_articles()
         sorted_articles = sorted(all_articles, key=lambda a: a['created_at'], reverse=True)
         return template('articles',
@@ -75,24 +73,21 @@ def save_article():
                         articles_list=sorted_articles,
                         current_sort='date',
                         main={'type': 'editor', 'article': None},
-                        form_data={'author': author, 'title': title, 'content': content},
+                        form_data={'author': author, 'title': title, 'content': content, 'phone': phone},
+                        form_errors=errors)
+    try:
+        new_article = add_article(author, title, content, phone)   # добавили phone
+    except ValueError as e:
+        all_articles = load_articles()
+        sorted_articles = sorted(all_articles, key=lambda a: a['created_at'], reverse=True)
+        return template('articles',
+                        year=datetime.now().year,
+                        articles_list=sorted_articles,
+                        current_sort='date',
+                        main={'type': 'editor', 'article': None},
+                        form_data={'author': author, 'title': title, 'content': content, 'phone': phone},
                         form_errors=errors)
     
-    try:
-        new_article = add_article(author, title, content)
-    except ValueError as e:
-        # Ошибка при добавлении (например, пустые поля)
-        all_articles = load_articles()
-        sorted_articles = sorted(all_articles, key=lambda a: a['created_at'], reverse=True)
-        return template('articles',
-                        year=datetime.now().year,
-                        articles_list=sorted_articles,
-                        current_sort='date',
-                        main={'type': 'editor', 'article': None},
-                        form_data={'author': author, 'title': title, 'content': content},
-                        form_errors={'general': str(e)})
-    
-    # Успех – перенаправляем на созданную статью
     response.status = 303
     response.headers['Location'] = f'/articles?id={new_article["id"]}'
     return ''

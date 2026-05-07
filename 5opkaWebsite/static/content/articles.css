@@ -152,6 +152,7 @@
     border-left: 4px solid #b94a48;
     padding: 10px;
     margin-bottom: 20px;
+    font-family: var(--main-font, 'Segoe UI');
 }
 
 .btn-submit {
