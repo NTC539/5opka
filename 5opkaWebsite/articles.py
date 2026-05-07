@@ -1,10 +1,12 @@
 ﻿import os
-from bottle import route, request, redirect, template, static_file
+from bottle import response, route, request, redirect, template, static_file
 from utils.article_storage import (
     load_articles, get_article_by_id, add_article,
     validate_article_fields, save_uploaded_image
 )
+import bottle
 from datetime import datetime
+
 
 @route('/articles')
 def articles_page():
@@ -90,7 +92,10 @@ def save_article():
                         form_errors={'general': str(e)})
     
     # Успех – перенаправляем на созданную статью
-    redirect(f'/articles')
+    response.status = 303
+    response.headers['Location'] = f'/articles?id={new_article["id"]}'
+    return ''
+
 
 # Маршрут для раздачи загруженных картинок
 @route('/uploads/<filename:path>')

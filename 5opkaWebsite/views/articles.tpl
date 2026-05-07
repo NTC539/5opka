@@ -24,7 +24,7 @@
         </div>
     </aside>
 
-    <main class="canvas">
+    <main class="sas">
         % if main['type'] == 'view':
             <div class="article-view">
                 <h1 class="heading-text">{{main['article']['title']}}</h1>
