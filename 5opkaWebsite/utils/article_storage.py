@@ -79,7 +79,7 @@ def add_article(author, title, content, phone):
         "author": author.strip(),
         "title": title.strip(),
         "content": content,
-        "phone": phone.strip(),          # сохраняем номер
+        "phone": phone.strip(),         
         "created_at": datetime.now().isoformat()
     }
     articles.append(article)

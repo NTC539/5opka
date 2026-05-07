@@ -153,6 +153,7 @@
     padding: 10px;
     margin-bottom: 20px;
     font-family: var(--main-font, 'Segoe UI');
+    font-size: 18px;
 }
 
 .btn-submit {
@@ -161,6 +162,7 @@
     padding: 8px 20px;
     cursor: pointer;
     font-family: var(--main-font, 'Segoe UI');
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
     .btn-submit:hover {
