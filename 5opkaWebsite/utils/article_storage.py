@@ -10,17 +10,11 @@ UPLOAD_DIR = './uploads'
 os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
+
+
 def load_articles():
     if not os.path.exists(ARTICLES_FILE):
-        sample = [{
-            "id": 1,
-            "author": "5opka Team",
-            "title": "Как стать популярным стримером",
-            "content": "<p>Уникальный контент, регулярные стримы, общение с аудиторией — главные секреты.</p>",
-            "created_at": datetime.now().isoformat()
-        }]
-        save_articles(sample)
-        return sample
+        return []
     with open(ARTICLES_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
 
@@ -35,15 +29,7 @@ def get_article_by_id(article_id):
             return a
     return None
 
-def add_article(author, title, content):
-    # Проверка обязательных полей
-    if not author or not author.strip():
-        raise ValueError("Автор не указан")
-    if not title or not title.strip():
-        raise ValueError("Заголовок не указан")
-    if content is None:
-        raise ValueError("Текст статьи отсутствует")
-    
+def add_article(author, title, content):   
     articles = load_articles()
     new_id = max([a['id'] for a in articles], default=0) + 1
     article = {
@@ -72,7 +58,7 @@ def save_uploaded_image(upload):
     if not upload or not upload.file:
         return None
     filename = upload.filename
-    ext = os.path.splitext(filename)[1].lower()
+    ext = os.path.splitext(filename)[-1].lower()
     if ext not in ('.png', '.jpg', '.jpeg', '.gif'):
         return None
     safe_name = f"{uuid.uuid4().hex}{ext}"

@@ -13,7 +13,7 @@
         </div>
         <div class="articles-list">
             % for article in articles_list:
-            <a href="/articles?id={{article['id']}}" class="article-item">
+            <a href="/articles?id={{article['id']}}" class="article-item {{'active' if main['article']['id'] is not NoneType and article['id'] == main['article']['id'] else ''}}">
                 <h4>{{article['title']}}</h4>
                 <p>{{article['author']}} • {{article['created_at'][:10]}}</p>
             </a>
@@ -24,7 +24,7 @@
         </div>
     </aside>
 
-    <main class="sas">
+    <main class="article-view">
         % if main['type'] == 'view':
             <div class="article-view">
                 <h1 class="heading-text">{{main['article']['title']}}</h1>

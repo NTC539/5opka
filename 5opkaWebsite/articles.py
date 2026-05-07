@@ -23,7 +23,6 @@ def articles_page():
     else:
         sorted_articles = sorted(all_articles, key=lambda a: a['created_at'], reverse=True)
     
-    # Определяем, что показывать в основной области
     main_content = None
     form_data = {}
     form_errors = {}
@@ -41,7 +40,9 @@ def articles_page():
             main_content = {'type': 'view', 'article': sorted_articles[0]}
         else:
             main_content = {'type': 'info', 'message': 'Нет статей. Создайте первую!'}
-    
+   
+
+
     return template('articles',
                     year=datetime.now().year,
                     articles_list=sorted_articles,
@@ -61,7 +62,7 @@ def save_article():
     # Если загружено изображение – сохраняем и добавляем тег в конец текста
     image_url = save_uploaded_image(uploaded_image)
     if image_url:
-        content += f'\n\n<img src="{image_url}" alt="image" style="max-width:100%">\n'
+        content += f'\n\n<div><img src="{image_url}" alt="image" style="max-width:100%">\n'
     
     # Валидация
     errors = validate_article_fields(author, title, content)
