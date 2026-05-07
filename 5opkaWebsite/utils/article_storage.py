@@ -1,7 +1,7 @@
-﻿
-import os
+﻿import os
 import json
 from datetime import datetime
+import uuid
 
 DATA_DIR = './data'
 ARTICLES_FILE = os.path.join(DATA_DIR, 'articles.json')
@@ -11,13 +11,12 @@ os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 def load_articles():
-    """Загружает все статьи из JSON."""
     if not os.path.exists(ARTICLES_FILE):
         sample = [{
             "id": 1,
             "author": "5opka Team",
             "title": "Как стать популярным стримером",
-            "content": "<p>Уникальный контент, регулярные стримы, общение с аудиторией — главные секреты.</p><img src='/uploads/example.jpg' alt='example' style='max-width:100%'>",
+            "content": "<p>Уникальный контент, регулярные стримы, общение с аудиторией — главные секреты.</p>",
             "created_at": datetime.now().isoformat()
         }]
         save_articles(sample)
@@ -37,6 +36,14 @@ def get_article_by_id(article_id):
     return None
 
 def add_article(author, title, content):
+    # Проверка обязательных полей
+    if not author or not author.strip():
+        raise ValueError("Автор не указан")
+    if not title or not title.strip():
+        raise ValueError("Заголовок не указан")
+    if content is None:
+        raise ValueError("Текст статьи отсутствует")
+    
     articles = load_articles()
     new_id = max([a['id'] for a in articles], default=0) + 1
     article = {
@@ -50,8 +57,6 @@ def add_article(author, title, content):
     save_articles(articles)
     return article
 
-
-
 def validate_article_fields(author, title, content):
     errors = {}
     if not author or not author.strip():
@@ -62,14 +67,16 @@ def validate_article_fields(author, title, content):
         errors['content'] = 'Текст статьи не может быть пустым.'
     return errors
 
-def save_uploaded_image(file_data, filename):
-    """Сохраняет загруженный файл и возвращает URL."""
-    import uuid
+def save_uploaded_image(upload):
+    """Сохраняет загруженное изображение и возвращает URL. Если файла нет – возвращает None."""
+    if not upload or not upload.file:
+        return None
+    filename = upload.filename
     ext = os.path.splitext(filename)[1].lower()
     if ext not in ('.png', '.jpg', '.jpeg', '.gif'):
         return None
     safe_name = f"{uuid.uuid4().hex}{ext}"
     filepath = os.path.join(UPLOAD_DIR, safe_name)
     with open(filepath, 'wb') as f:
-        f.write(file_data.file.read())
+        f.write(upload.file.read())
     return f"/uploads/{safe_name}"

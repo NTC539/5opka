@@ -49,7 +49,7 @@
                     </ul>
                 </div>
                 % end
-                <form method="post" action="/articles/save">
+                <form method="post" action="/articles/save" enctype="multipart/form-data">
                     <div class="form-group">
                         <label class="regular-text">Автор</label>
                         <input type="text" name="author" value="{{form_data.get('author', '')}}" required>
@@ -59,22 +59,14 @@
                         <input type="text" name="title" value="{{form_data.get('title', '')}}" required>
                     </div>
                     <div class="form-group">
-                        <label class="regular-text">Текст (HTML разрешён)</label>
+                        <label class="regular-text">Текст статьи (можно использовать HTML)</label>
                         <textarea name="content" required>{{form_data.get('content', '')}}</textarea>
                     </div>
-                    <button type="submit" class="btn-submit">Опубликовать</button>
-                </form>
-                
-                <hr style="margin: 30px 0 20px;">
-                <h3 class="heading-text" style="font-size: 20px;">Загрузить изображение</h3>
-                <form method="post" action="/articles/upload_image" enctype="multipart/form-data">
-                    <input type="hidden" name="author" value="{{form_data.get('author', '')}}">
-                    <input type="hidden" name="title" value="{{form_data.get('title', '')}}">
-                    <input type="hidden" name="content" value="{{form_data.get('content', '')}}">
                     <div class="form-group">
+                        <label class="regular-text">Изображение (будет добавлено в конец статьи)</label>
                         <input type="file" name="image" accept="image/*">
                     </div>
-                    <button type="submit" class="btn-submit">Вставить изображение в конец статьи</button>
+                    <button type="submit" class="btn-submit">Опубликовать</button>
                 </form>
             </div>
         % elif main['type'] == 'error':
