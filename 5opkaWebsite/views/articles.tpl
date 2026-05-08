@@ -65,7 +65,7 @@
                     </div>
                     <div class="form-group">
                         <label class="regular-text">Текст статьи (можно использовать HTML)</label>
-                        <textarea name="content" required>{{form_data.get('content', '')}}</textarea>
+                        <textarea name="content">{{form_data.get('content', '')}}</textarea>
                     </div>
                     <div class="form-group">
                         <label class="regular-text">Изображение (будет добавлено в конец статьи)</label>

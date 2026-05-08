@@ -3,7 +3,7 @@
 Routes and views for the bottle application.
 """
 
-from bottle import route, view, template, request, redirect
+from bottle import route, view, template, request, redirect, response
 import json
 import os
 from datetime import datetime
@@ -276,4 +276,5 @@ def feedback_post():
     feedback_list.append(new_feedback)
     save_feedback(feedback_list)
 
-    return redirect('/feedback')
+    response.status = 303
+    response.headers['Location'] = '/feedback'

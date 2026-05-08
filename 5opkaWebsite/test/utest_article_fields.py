@@ -2,7 +2,7 @@
 import sys, os
 from utils.article_storage import validate_article_fields
 
-class TestExtendedValidation(unittest.TestCase):
+class TestArticleValidation(unittest.TestCase):
     
     def test_valid_all_fields(self):
         errors = validate_article_fields(
