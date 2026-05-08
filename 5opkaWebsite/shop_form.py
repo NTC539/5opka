@@ -1,5 +1,23 @@
-from bottle import post, request
+import re
+import os
+import json
+from bottle import post, request, template, response
 from datetime import date
+
+STR_REGEX = r'^[a-zA-Zа-яА-ЯёЁ]+$'
+PHONE_REGEX = r'^(\+7|8)\d{10}$'
+
+def load_orders(filename='Orders.txt'): 
+    if not os.path.exists(filename):
+        return {}
+    try:
+        with open(filename, 'r', encoding='utf-8') as file:
+            content = file.read().strip()
+            if not content:
+                return {}
+            return json.loads(content)
+    except (json.JSONDecodeError, IOError):
+        return {}
 
 @post('/order', method='post')
 def shop_form():
@@ -9,8 +27,35 @@ def shop_form():
     email = request.forms.get('email').strip()
     address = request.forms.get('address').strip()
     product = request.forms.get('product').strip()
+    order_date = str(date.today())
 
-    return first_name + last_name + phone_number + email + address + product + str(date.today())
+    if not first_name or not last_name or not phone_number or not email or not address or not product:
+        return "<strong>Ошибка:</strong> Не все поля заполнены! <br/> <a href='/shop'>Назад</a>"
+    if not re.match(STR_REGEX, first_name):
+        return "<strong>Ошибка:</strong> Неверный формат имени! Используйте только символы кириллицы или латиницы.<br/> <a href='/shop'>Назад</a>"
+    if not re.match(STR_REGEX, last_name):
+        return "<strong>Ошибка:</strong> Неверный формат фамилии! Используйте только символы кириллицы или латиницы.<br/> <a href='/shop'>Назад</a>"
+    if not re.match(PHONE_REGEX, phone_number):
+        return "<strong>Ошибка:</strong> Неверный формат номера телефона! Используйте только цифры. Разрешены только российские номера, которые начинаются на +7 или 8.<br/> <a href='/shop'>Назад</a>"
+    if len(address) < 10:
+        return "<strong>Ошибка:</strong> Неверный формат номера адреса доставки! Используйте только цифры. Введите точный адрес доставки, чтобы мы могли доставить товар.<br/> <a href='/shop'>Назад</a>"
+    
+    orders = load_orders()
+    
+    if email not in orders:
+            orders[email] = []
+    orders[email].append([first_name, last_name, phone_number, address, product, order_date])
+    with open('Orders.txt', 'w') as outfile:
+        json.dump(orders, outfile, indent=2)
+    
+    response.content_type = 'text/html; charset=utf-8'
+    return template('shop/order_result.tpl', 
+                    title="Заказ", 
+                    year=2026, 
+                    full_name=first_name + ' ' + last_name,
+                    product = product,
+                    address = address,
+                    time=order_date)
 
 
 

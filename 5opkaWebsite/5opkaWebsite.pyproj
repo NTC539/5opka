@@ -56,6 +56,7 @@
     <Folder Include="views\" />
     <Folder Include="views\career\" />
     <Folder Include="views\music\" />
+    <Folder Include="views\shop\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
@@ -151,6 +152,9 @@
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
     <Content Include="views\shop.tpl">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\shop\order_result.tpl">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>

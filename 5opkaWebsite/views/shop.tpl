@@ -4,19 +4,19 @@
 	<div class="products-container">
         <div class="product-card" data-product="Футболка">
             <img src="/static/images/shopPage/T-Shirt.png" class="product-image" alt="Футболка"/>
-            <h3 class="product-name">Футболка "42 братуха"</h3>
+            <p class="product-name">Футболка "42 братуха"</p>
             <p class="product-desc">95% хлопок 5% лайкра</p>
             <p class="product-price">3 500 ₽</p>
         </div>
         <div class="product-card" data-product="Кружка">
             <img src="/static/images/shopPage/T-Shirt1.png" class="product-image" alt="Футболка"/>
-            <h3 class="product-name">Футболка "Мачо и ботан"</h3>
+            <p class="product-name">Футболка "Мачо и ботан"</p>
             <p class="product-desc">95% хлопок 5% лайкра</p>
             <p class="product-price">3 500 ₽</p>
         </div>
         <div class="product-card" data-product="Фото с автографом">
             <img src="/static/images/shopPage/Calendar.png" class="product-image" alt="Календарь"/>
-            <h3 class="product-name">Календарь 2026 (маленький)</h3>
+            <p class="product-name">Календарь 2026 (маленький)</p>
             <p class="product-desc">200х100х85мм</p>
             <p class="product-price">800 ₽</p>
         </div>
@@ -40,11 +40,21 @@
 
 			<label for="order-product">Товар</label>
             <select id="order-product" name="product">
-                <option value="">Футболка "42 братуха"</option>
-                <option value="">Футболка "Мачо и ботан"</option>
-                <option value="">Календарь 2026 (маленький)</option>
+                <option value="Футболка "42 братуха"">Футболка "42 братуха"</option>
+                <option value="Футболка "Мачо и ботан"">Футболка "Мачо и ботан"</option>
+                <option value="Календарь 2026 (маленький)">Календарь 2026 (маленький)</option>
             </select>
 			<input id="order-submit" type="submit" name="submit" value="Заказать"/>
 		</form>
 	</div>
+    <div class="orders-container">
+        <h1>У нас уже заказали</h1>
+        <div class="order-card">
+            <img/>
+            <p>Имя и Фамилия</p>
+            <p>Название товара</p>
+            <p>Стоимость товара</p>
+            <p>Дата заказа</p>
+        </div>
+    <div>
 </div>

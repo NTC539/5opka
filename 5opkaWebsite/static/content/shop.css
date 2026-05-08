@@ -4,7 +4,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-    /* остальные ваши свойства оставьте без изменений */
     width: max-content;
     margin-left: auto;
     margin-right: auto;
@@ -173,4 +172,26 @@ box-shadow: 0 5px 12px rgba(90, 103, 216, 0.3);
 
 .order-form input[type="submit"]:active {
     transform: scale(0.97);
+}
+
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 10px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 35px 30px;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+.order-card {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    background: var(--main-color);
+    padding: 35px 30px;
 }
