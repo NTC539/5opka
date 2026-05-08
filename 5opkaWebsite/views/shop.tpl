@@ -23,27 +23,80 @@
     </div>
 	<div class="form-container">
 		<form action="/order" class="order-form" name="shop-order" method="post">
-			<label for="order-first-name">Имя</label>
-			<input id="order-first-name" type="text" name="first_name" placeholder="Введите ваше имя"/>
-    
-			<label for="order-last-name">Фамилия</label>
-			<input id="order-last-name" type="text" name="last_name" placeholder="Введите вашу фамилию"/>
+			<!-- Имя -->
+            <label for="order-first-name">Имя</label>
+            <input id="order-first-name" type="text" name="first_name"
+                   placeholder="Введите ваше имя"
+                   value="{{ form_data.get('first_name', '') if form_data else '' }}"
+                   class="{{ 'error-input' if errors and 'first_name' in errors else '' }}">
+            % if errors and 'first_name' in errors:
+                <span class="error-msg">{{ errors['first_name'] }}</span>
+            % end
 
-			<label for="order-phone-number">Номер телефона</label>
-			<input id="order-phone-number" type="tel" name="phone_number" placeholder="Введите ваш номер телефона"/>
-    
-			<label for="order-email">Почта</label>
-			<input id="order-email" type="email" name="email" placeholder="Введите вашу почту"/>
+            <!-- Фамилия -->
+            <label for="order-last-name">Фамилия</label>
+            <input id="order-last-name" type="text" name="last_name"
+                   placeholder="Введите вашу фамилию"
+                   value="{{ form_data.get('last_name', '') if form_data else '' }}"
+                   class="{{ 'error-input' if errors and 'last_name' in errors else '' }}">
+            % if errors and 'last_name' in errors:
+                <span class="error-msg">{{ errors['last_name'] }}</span>
+            % end
 
-			<label for="order-address">Адрес доставки</label>
-			<input id="order-address" type="text" name="address" placeholder="Введите адрес доставки"/>
+            <!-- Телефон -->
+            <label for="order-phone-number">Номер телефона</label>
+            <input id="order-phone-number" type="tel" name="phone_number"
+                   placeholder="Введите ваш номер телефона"
+                   value="{{ form_data.get('phone_number', '') if form_data else '' }}"
+                   class="{{ 'error-input' if errors and 'phone_number' in errors else '' }}">
+            % if errors and 'phone_number' in errors:
+                <span class="error-msg">{{ errors['phone_number'] }}</span>
+            % end
 
-			<label for="order-product">Товар</label>
-            <select id="order-product" name="product">
-                <option value="Футболка "42 братуха"">Футболка "42 братуха"</option>
-                <option value="Футболка "Мачо и ботан"">Футболка "Мачо и ботан"</option>
-                <option value="Календарь 2026 (маленький)">Календарь 2026 (маленький)</option>
+            <!-- Email -->
+            <label for="order-email">Почта</label>
+            <input id="order-email" type="email" name="email"
+                   placeholder="Введите вашу почту"
+                   value="{{ form_data.get('email', '') if form_data else '' }}"
+                   class="{{ 'error-input' if errors and 'email' in errors else '' }}">
+            % if errors and 'email' in errors:
+                <span class="error-msg">{{ errors['email'] }}</span>
+            % end
+
+            <!-- Адрес -->
+            <label for="order-address">Адрес доставки</label>
+            <input id="order-address" type="text" name="address"
+                   placeholder="Введите адрес доставки"
+                   value="{{ form_data.get('address', '') if form_data else '' }}"
+                   class="{{ 'error-input' if errors and 'address' in errors else '' }}">
+            % if errors and 'address' in errors:
+                <span class="error-msg">{{ errors['address'] }}</span>
+            % end
+
+            <!-- Товар -->
+            <label for="order-product">Товар</label>
+            <select id="order-product" name="product"
+                    class="{{ 'error-input' if errors and 'product' in errors else '' }}">
+                <option value="">-- Выберите --</option>
+                <option value='Футболка "42 братуха"'
+                    % if form_data and form_data.get('product') == 'Футболка "42 братуха"':
+                        selected
+                    % end
+                >Футболка "42 братуха"</option>
+                <option value='Футболка "Мачо и ботан"'
+                    % if form_data and form_data.get('product') == 'Футболка "Мачо и ботан"':
+                        selected
+                    % end
+                >Футболка "Мачо и ботан"</option>
+                <option value="Календарь 2026 (маленький)"
+                    % if form_data and form_data.get('product') == 'Календарь 2026 (маленький)':
+                        selected
+                    % end
+                >Календарь 2026 (маленький)</option>
             </select>
+            % if errors and 'product' in errors:
+                <span class="error-msg">{{ errors['product'] }}</span>
+            % end
 			<input id="order-submit" type="submit" name="submit" value="Заказать"/>
 		</form>
 	</div>
@@ -53,7 +106,6 @@
             % for order in orders:
             <div class="order-card">
                 <div class="order-card-avatar">
-                    <!-- можно иконку или первую букву имени -->
                     <span>{{ order['full_name'][0] }}</span>
                 </div>
                 <div class="order-card-info">
