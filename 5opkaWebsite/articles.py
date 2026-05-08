@@ -56,7 +56,7 @@ def save_article():
     author = request.forms.get('author', '').strip()
     title = request.forms.get('title', '').strip()
     content = request.forms.get('content', '')
-    phone = request.forms.get('phone', '').strip()          # новое поле
+    phone = request.forms.get('phone', '').strip()         
     
     uploaded_image = request.files.get('image')
     if uploaded_image:
@@ -64,7 +64,7 @@ def save_article():
         if url:
             content += f'\n\n<div><img src="{url}" alt="image" style="max-width:100%"></div>\n'
     
-    errors = validate_article_fields(author, title, content, phone)   # добавили phone
+    errors = validate_article_fields(author, title, content, phone)   
     if errors:
         all_articles = load_articles()
         sorted_articles = sorted(all_articles, key=lambda a: a['created_at'], reverse=True)
@@ -76,7 +76,7 @@ def save_article():
                         form_data={'author': author, 'title': title, 'content': content, 'phone': phone},
                         form_errors=errors)
     try:
-        new_article = add_article(author, title, content, phone)   # добавили phone
+        new_article = add_article(author, title, content, phone)   
     except ValueError as e:
         all_articles = load_articles()
         sorted_articles = sorted(all_articles, key=lambda a: a['created_at'], reverse=True)
