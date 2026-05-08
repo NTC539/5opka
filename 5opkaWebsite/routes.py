@@ -119,19 +119,10 @@ def music_track(track_name):
         track_list=track_list
     )
 
-@route('/articles')
-@view('articles')
-def news():
-    """Renders the articles page."""
-    return dict(
-        title='Статьи',
-        message='Your application description page.',
-        year=datetime.now().year
-    )
 
 @route('/shop')
 @view('shop')
-def news():
+def shop():
     """Renders the shop page."""
     return dict(
         title='Магазин',
@@ -141,7 +132,7 @@ def news():
 
 @route('/feedback')
 @view('feedback')
-def news():
+def feedback():
     """Renders the feedback page."""
     return dict(
         title='Отзывы',

@@ -8,6 +8,9 @@ import sys
 # routes contains the HTTP handlers for our server and must be imported.
 import routes
 
+import articles
+
+bottle.debug(True)
 
 if '--debug' in sys.argv[1:] or 'SERVER_DEBUG' in os.environ:
     # Debug mode will enable more verbose output in the console window.
@@ -20,6 +23,7 @@ def wsgi_app():
     return bottle.default_app()
 
 if __name__ == '__main__':
+    
     PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
     STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static').replace('\\', '/')
     HOST = os.environ.get('SERVER_HOST', 'localhost')
@@ -36,5 +40,5 @@ if __name__ == '__main__':
         return bottle.static_file(filepath, root=STATIC_ROOT)
 
     # Starts a local test server.
-    bottle.run(server='wsgiref', host=HOST, port=PORT)
+    bottle.run(server='wsgiref', host=HOST, port=PORT, debug=True)
 
