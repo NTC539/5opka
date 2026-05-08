@@ -18,7 +18,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>5opkaWebsite</Name>
     <RootNamespace>5opkaWebsite</RootNamespace>
-    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
     <TestFramework>unittest</TestFramework>
     <UnitTestPattern>utest*.py</UnitTestPattern>
     <UnitTestRootDirectory>test</UnitTestRootDirectory>
@@ -63,11 +63,13 @@
     <Folder Include="static\images\career\2025\" />
     <Folder Include="static\images\homePage\" />
     <Folder Include="static\images\musicPage\" />
+    <Folder Include="static\images\shopPage\" />
     <Folder Include="static\images\newsPage\" />
     <Folder Include="static\scripts\" />
     <Folder Include="views\" />
     <Folder Include="views\career\" />
     <Folder Include="views\music\" />
+    <Folder Include="views\shop\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
@@ -75,6 +77,10 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="static\content\career.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="static\content\layout.css" />
+    <Content Include="static\content\shop.css">
       <SubType>Code</SubType>
     </Content>
     <Content Include="static\content\site.css" />
@@ -162,6 +168,9 @@
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
     <Content Include="views\shop.tpl">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\shop\order_result.tpl">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>

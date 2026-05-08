@@ -1,0 +1,288 @@
+﻿/*Shop.css*/
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 35px 30px;
+    background: var(--main-color);
+    border-radius: 8px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.06), 0 6px 12px rgba(0, 0, 0, 0.04);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    color: #1a202c;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* остальные свойства сохраняются */
+    flex: 1 1 200px;
+    height: 100%;
+    min-width: 200px;
+    max-width: 220px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    backdrop-filter: blur(5px);
+}
+
+/* Иконка товара */
+.product-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 140px; /* ограничиваем высоту картинки */
+    object-fit: contain; /* вписываем без обрезки */
+    margin-bottom: 12px;
+    border-radius: 8px;
+    /* font-size больше не нужен */
+}
+
+/* Название товара */
+.product-name {
+    min-height: 3rem; /* ≈ две строки текста 1.2rem + запас */
+    display: flex;
+    align-items: center; /* текст по центру вертикали, если меньше */
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #2d3748;
+}
+
+/* Описание */
+.product-desc {
+    height: 3.2rem; /* две строки мелкого шрифта 0.85rem × 2 ≈ 1.7rem, даём чуть больше */
+    overflow: hidden;
+    line-height: 1.4;
+    margin-bottom: 10px; /* прежний отступ */
+    font-size: 0.85rem;
+    color: #4a5568;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+/* Цена */
+.product-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: black;
+    margin: 0 0 15px 0;
+}
+
+.form-container {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 35px 30px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.06), 0 6px 12px rgba(0, 0, 0, 0.04);
+    /* Красивый шрифт без засечек (системный стек) */
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    color: #1a202c;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.1em; /* расстояние между дочерними элементами */
+}
+
+.order-form > * {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0; /* убирает врождённый минимум */
+    max-width: 100%; /* гарантирует отсутствие переполнения */
+    flex-shrink: 0; /* запрещаем flex-сжатие, если оно вдруг включается */
+}
+
+.order-form label {
+    font-size: 1.0rem;
+    font-weight: 600;
+    color: #2d3748;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+.order-form input:not([type="submit"]),
+.order-form select {
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-family: inherit; /* наследуем шрифт контейнера */
+    color: #1a202c;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.order-form select {
+    padding-right: 36px;
+    cursor: pointer;
+}
+
+.order-form input:not([type="submit"]):focus,
+.order-form select:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 2px var(--main-color);
+}
+
+.order-form input::placeholder,
+.order-form select::placeholder {
+    color: #a0aec0;
+    opacity: 1;
+}
+
+.order-form input[type="submit"] {
+width: 100%;
+padding: 14px 0;
+margin-top: 1.5em;
+font-size: 1.05rem;
+font-weight: 600;
+font-family: inherit;
+color: black;
+background: var(--main-color);
+border: none;
+border-radius: 12px;
+cursor: pointer;
+letter-spacing: 0.03em;
+transition: background 0.25s ease, transform 0.1s ease;
+box-shadow: 0 5px 12px rgba(90, 103, 216, 0.3);
+}
+
+.order-form input[type="submit"]:hover {
+    background: var(--sub-color);
+}
+
+.order-form input[type="submit"]:active {
+    transform: scale(0.97);
+}
+
+.orders-container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+.orders-container h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.order-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s;
+}
+
+.order-card-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.order-card-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px 20px;
+    flex: 1;
+}
+
+.order-fullname {
+    font-weight: 600;
+    color: #2d3748;
+    min-width: 150px;
+}
+
+.order-product {
+    color: #4a5568;
+    flex: 1;
+}
+
+.order-price {
+    font-weight: 700;
+    color: black;
+    white-space: nowrap;
+}
+
+.order-date {
+    color: #a0aec0;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+.order-result-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 35px 30px;
+    background: var(--main-color);
+    border-radius: 8px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.06), 0 6px 12px rgba(0, 0, 0, 0.04);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    color: #1a202c;
+}
+
+.order-result-container > p{
+    margin: 0px;
+}
+
+.order-result-container > h1{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.error-input {
+    border-color: #e53e3e !important;
+    box-shadow: 0 0 0 2px rgba(229, 62, 62, 0.2) !important;
+}
+
+.error-msg {
+    color: #e53e3e;
+    font-size: 0.8rem;
+    margin-top: -0.1em;
+    margin-bottom: 0.5em;
+    display: block;
+}

@@ -4,9 +4,11 @@ This script runs the application using a development server.
 import bottle
 import os
 import sys
+from bottle import BaseTemplate
 
 # routes contains the HTTP handlers for our server and must be imported.
 import routes
+import shop_form
 
 import articles
 

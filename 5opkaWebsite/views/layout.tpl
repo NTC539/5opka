@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фанатская биография 5opka - {{ title }}</title>
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/shop.css" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
 </head>
 
