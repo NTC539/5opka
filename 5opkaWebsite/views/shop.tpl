@@ -49,12 +49,23 @@
 	</div>
     <div class="orders-container">
         <h1>У нас уже заказали</h1>
-        <div class="order-card">
-            <img/>
-            <p>Имя и Фамилия</p>
-            <p>Название товара</p>
-            <p>Стоимость товара</p>
-            <p>Дата заказа</p>
-        </div>
-    <div>
+        % if orders:
+            % for order in orders:
+            <div class="order-card">
+                <div class="order-card-avatar">
+                    <!-- можно иконку или первую букву имени -->
+                    <span>{{ order['full_name'][0] }}</span>
+                </div>
+                <div class="order-card-info">
+                    <p class="order-fullname">{{ order['full_name'] }}</p>
+                    <p class="order-product">{{ order['product'] }}</p>
+                    <p class="order-price">{{ order['price'] }} ₽</p>
+                    <p class="order-date">{{ order['date'] }}</p>
+                </div>
+            </div>
+            % end
+        % else:
+            <p>Пока заказов нет. Станьте первым!</p>
+        % end
+    </div>
 </div>

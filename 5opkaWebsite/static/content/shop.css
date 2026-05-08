@@ -175,25 +175,30 @@ box-shadow: 0 5px 12px rgba(90, 103, 216, 0.3);
 }
 
 .orders-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    gap: 10px;
-    width: 1200px;
+    width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding: 35px 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+.orders-container h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
 }
 
 .order-card {
     display: flex;
-    flex-direction: column;
-    width: max-content;
-    background: var(--main-color);
-    padding: 35px 30px;
+    align-items: center;
+    gap: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s;
 }
 
 .order-result-container {

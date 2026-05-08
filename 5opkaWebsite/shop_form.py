@@ -1,7 +1,7 @@
 import re
 import os
 import json
-from bottle import post, request, template, response
+from bottle import post, get, request, template, response
 from datetime import date
 
 STR_REGEX = r'^[a-zA-Zа-яА-ЯёЁ]+$'
@@ -45,8 +45,8 @@ def shop_form():
     if email not in orders:
             orders[email] = []
     orders[email].append([first_name, last_name, phone_number, address, product, order_date])
-    with open('Orders.txt', 'w') as outfile:
-        json.dump(orders, outfile, indent=2)
+    with open('Orders.txt', 'w', encoding='utf-8') as outfile:
+        json.dump(orders, outfile, indent=2, ensure_ascii=False)
     
     response.content_type = 'text/html; charset=utf-8'
     return template('shop/order_result.tpl', 
@@ -56,6 +56,31 @@ def shop_form():
                     product = product,
                     address = address,
                     time=order_date)
+
+
+@get('/shop')          
+def shop_page():
+    response.content_type = 'text/html; charset=utf-8'
+    prices = {
+        'Футболка "42 братуха"': 3500,
+        'Футболка "Мачо и ботан"': 3500,
+        'Календарь 2026 (маленький)': 800
+    }
+    orders = load_orders()
+    all_orders = []
+    for email, order_list in orders.items():
+        for order in order_list:
+            all_orders.append({
+                'full_name': f"{order[0]} {order[1]}",
+                'product': order[4],
+                'price': prices.get(order[4], '—'),
+                'date': order[5]
+            })
+    
+    return template('shop',
+                    title='Магазин',
+                    year=2026,
+                    orders=all_orders)
 
 
 
