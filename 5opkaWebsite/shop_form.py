@@ -6,6 +6,24 @@ from datetime import date
 
 STR_REGEX = r'^[a-zA-Zа-яА-ЯёЁ]+$'
 PHONE_REGEX = r'^(\+7|8)\d{10}$'
+EMAIL_REGEX = r'^(?=.{1,254}$)[a-zA-Z0-9.!#$%&\'*+/=?^_\\{|}~-]{1,64}@[a-zA-Z0-9.-]{1,}\.[a-zA-Z]{2,}$'
+
+def is_email_format_correct(email):
+    #По регулярному выражению проверям формат почты
+    if not re.match(EMAIL_REGEX, email):
+        return False
+    #Дополнительно ищем невозможные комбинации точек и тире в почте
+    elif ".." in email or email.startswith(".") or email.endswith(".") or ".@" in email or "@." in email:
+        return False
+    elif "@-" in email or "-@" in email or "-." in email or ".-" in email:
+        return False
+    return True
+
+def is_name_valid(name):
+    return bool(re.fullmatch(STR_REGEX, name))
+
+def is_phone_valid(phone):
+    return bool(re.fullmatch(PHONE_REGEX, phone))
 
 def load_orders(filename='Orders.txt'): 
     if not os.path.exists(filename):
@@ -52,21 +70,23 @@ def shop_form():
     errors = {}
     if not first_name:
         errors['first_name'] = 'Имя обязательно'
-    elif not re.fullmatch(STR_REGEX, first_name):
+    elif not is_name_valid(first_name):
         errors['first_name'] = 'Используйте только буквы (русские или латинские)'
 
     if not last_name:
         errors['last_name'] = 'Фамилия обязательна'
-    elif not re.fullmatch(STR_REGEX, last_name):
+    elif not is_name_valid(last_name):
         errors['last_name'] = 'Используйте только буквы (русские или латинские)'
 
     if not phone_number:
         errors['phone_number'] = 'Телефон обязателен'
-    elif not re.fullmatch(PHONE_REGEX, phone_number):
+    elif not is_phone_valid(phone_number):
         errors['phone_number'] = 'Формат: +7XXXXXXXXXX или 8XXXXXXXXXX (10 цифр)'
 
     if not email:
         errors['email'] = 'Почта обязательна'
+    elif not is_email_format_correct(email):
+        errors['email'] = 'Неверный формат почты'
 
     if not address:
         errors['address'] = 'Адрес обязателен'
