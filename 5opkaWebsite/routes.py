@@ -203,8 +203,8 @@ def save_feedback(feedback_list):
 
 @route('/feedback')
 @view('feedback')
-def feedback_get():
-    """GET: Показывает страницу с отзывами и формой"""
+def feedback():
+    """Renders the feedback page."""
     feedback_list = load_feedback()
     feedback_list.sort(key=lambda x: x.get('date', ''), reverse=True)
     return dict(
@@ -220,13 +220,11 @@ def feedback_get():
 def feedback_post():
     """POST: Обрабатывает отправку нового отзыва"""
 
-    # Получаем сырые данные из формы
     author = request.forms.get('author', '')
     email = request.forms.get('email', '')
     text = request.forms.get('text', '')
 
     def fix_encoding(s):
-        """Исправляет дважды закодированный UTF-8 текст"""
         if isinstance(s, str):
             try:
                 return s.encode('raw_unicode_escape').decode('utf-8')
@@ -251,8 +249,7 @@ def feedback_post():
     if not email:
         errors['email'] = 'Введите email'
     elif not is_valid_email(email):
-        errors[
-            'email'] = 'Введите корректный email (допустимые домены: gmail.com, mail.ru, yandex.ru, ya.ru, outlook.com, rambler.ru)'
+        errors['email'] = 'Введите корректный email'
 
     if not text:
         errors['text'] = 'Введите текст отзыва'
@@ -279,4 +276,4 @@ def feedback_post():
     feedback_list.append(new_feedback)
     save_feedback(feedback_list)
 
-    redirect('/feedback')
+    return redirect('/feedback')
