@@ -1,0 +1,26 @@
+/* feedback.css - только специфичные стили для страницы отзывов */
+
+/* Адаптивность для отзывов (переопределяем отступы news-container) */
+@media (max-width: 1400px) {
+    .feedback-container .heading-text,
+    .feedback-container > div[style*="padding: 0 400px"] {
+        padding-left: 200px !important;
+        padding-right: 200px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .feedback-container .heading-text,
+    .feedback-container > div[style*="padding: 0 400px"] {
+        padding-left: 100px !important;
+        padding-right: 100px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .feedback-container .heading-text,
+    .feedback-container > div[style*="padding: 0 400px"] {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
